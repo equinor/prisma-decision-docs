@@ -1,2 +1,2 @@
-# dot-docs
-DOT application documentation
+# nexum-docs
+Nexum application documentation
