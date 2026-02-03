@@ -1,2 +1,2 @@
-# nexum-docs
-Nexum application documentation
+# prisma-decision-docs
+Prisma Decision application documentation
