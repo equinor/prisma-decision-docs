@@ -11,9 +11,17 @@ The technical notes have a header of top level. All items under those should sta
 References to papers should be linked to open-source access when possible.
 
 
-### Graphical representation of influence diagrams
+### Figures
 
-- Decision nodes: square or rectangle with color #f7ff66 
-- Chance nodes: circle or ellipse with color #67fd80
-- Value nodes: diamond with color #2bf6f2
+Conventions are required so figures are harmonized.
+
+#### Font
+
+Callibri, normal
+
+#### Graphical representation of influence diagrams
+
+- Decision nodes: square or rectangle with color #fdfd96ff  
+- Chance nodes: circle or ellipse with color #a6ffa6ff
+- Value nodes: diamond with color #aae6f6ff
 - Arc: arrow with color #000000
