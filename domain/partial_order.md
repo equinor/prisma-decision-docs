@@ -18,9 +18,8 @@ The relation $\preceq$ is a partial ordering if it is reflexive, transitive, and
 
 Given the $m$ decision nodes $d_1, d_2, \ldots d_m$ in the influence diagram and assuming they are completely ordered (regularity constraint of the influence diagram), we have $m+1$ *decision windows*. A decision
 window, $W_j$ contains the chance nodes observed for the first time between the decision $d_{j-1}$ and $d_{j}$.
-
 Chance nodes that are never observed are included with those observed 
-after the last decision in $W_{m+l}$. The windows partition then all of the chance nodes.
+after the last decision in $W_{m+1}$. The windows partition then all of the chance nodes.
 
 This leads to the algorithm (notice the elimination order is the reversed version of the desired partial order)
 
@@ -30,7 +29,7 @@ This leads to the algorithm (notice the elimination order is the reversed versio
 > 1. **Inputs:** An influence diagram without value nodes and a decision order, $\mathcal D$
 > 1. **Initialize:** Elimination order, ${\mathcal O} = \emptyset$
 > 1. **for** each decision $d$ of $\mathcal D$ taken in reverse order **do**
-> 1. &nbsp;&nbsp;&nbsp;&nbsp; Find all chance nodes, $\mathcal C$, in the decision windows preceeding $d$
+> 1. &nbsp;&nbsp;&nbsp;&nbsp; Find all chance nodes, $\mathcal C$, in the decision window preceeding $d$
 > 1. &nbsp;&nbsp;&nbsp;&nbsp; ${\mathcal O} \leftarrow {\mathcal O} \cup \{d\}$
 > 1. &nbsp;&nbsp;&nbsp;&nbsp; ${\mathcal O} \leftarrow {\mathcal O} \cup {\mathcal C}$
 > 1. &nbsp;&nbsp;&nbsp;&nbsp; ${\mathcal D} \leftarrow {\mathcal D} \setminus \{d\}$
@@ -40,23 +39,34 @@ This leads to the algorithm (notice the elimination order is the reversed versio
 > 1. **Return** $\preceq$
 > ---
 
-For the Used car buyer problem as shown on the figure below, there decisions windows are
+<br>
 
-$$
-W_1 = \emptyset, W_2 = {R}, W_3 = {O}
-$$
+The figure below represents the influence diagram for the used car buyer problem.
 
-This gives the partial order
-$$
-T \preceq R \preceq A \preceq O
-$$
+<br>
+<br>
 
-
-![Influence diagram of the used car buyer problem](./figures/used_car_buyer.png "Influence diagram of the used car buyer problem")
+<p align="center">
+<img src="./figures/used_car_buyer.png" 
+    alt="Influence diagram of the used car buyer problem"
+    title="Influence diagram of the used car buyer problem"
+    width="400">
+</p>
 
 *Influence diagram of the used car buyer problem. T is the decision of testing or not, A is the decision of purchasing, R is the result of the test, O is the initial state of the car, and V<sub>1</sub>, V<sub>2</sub>, and V<sub>3</sub> are the cost of the test, the profit of the car and the maintenance costs.*
 
 
+The decisions windows are
+
+$$
+W_1 = \emptyset, W_2 = {R}, W_3 = {O},
+$$
+
+which gives the partial order
+
+$$
+T \preceq R \preceq A \preceq O
+$$  
 
 
 ### See also
@@ -65,6 +75,8 @@ $$
 - Decision tree
 - Junction tree
 
+
+### References
 
 [^1]: Shachter, Ross. (1990). An Ordered Examination of Influence Diagrams. Networks. 20. 535 - 563. 10.1002/net.3230200505.
 [@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)
