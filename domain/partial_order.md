@@ -72,7 +72,7 @@ $$
 ### See also
 - [Influence diagram](./influence_diagram.md)
 - Topological order
-- Decision tree
+- [Decision tree](./decision_tree.md)
 - Junction tree
 
 
