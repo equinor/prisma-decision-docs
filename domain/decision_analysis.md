@@ -32,7 +32,7 @@ This phase answers the question "what is the decision you face?". There, the pro
 - Payoffs (or outcomes, consequences) of each alternative for each objective 
 - Decision, the ultimate choice among the identiﬁed alternatives
 
-The 3 first elements are also called decision basis:
+The three first elements are also called decision basis:
 - Preferences: what do you want?
 - Alternatives: What can you do?
 - Information: What do you knw?
