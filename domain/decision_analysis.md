@@ -25,7 +25,7 @@ It is an iterative process, where these 3 steps should be revisited until the be
 
 ### Formulation phase
 
-This phase answers the question "what is the decision you face?". There, the problem is defined and framed. A decision model composed of 5 elements is build. These 5 elements can be identiﬁed in virtually all decision situations[^2]:
+This phase answers the question "what is the decision you face?". There, the problem is defined and framed. A decision model composed of five elements is build. These elements can be identiﬁed in virtually all decision situations[^2]:
 - Alternatives (or choices) to be decided among 
 - Objectives (or criteria) and preferences for what we want 
 - Information, which may include data and is usually uncertain 
