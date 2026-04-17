@@ -76,9 +76,22 @@ Common risks are
 
 [Decision analysis](./decision_analysis.md) is an iterative process thich allows securing the quality of the decision process and building commitment to action. The [decision maker(s)](./decision_roles.md) needs to be involved in the framing and creation of alternatives as he (or they) owns them.
 
+<br>
+<p align="center">
+<img src="./figures/da_dialog.png" 
+    alt="Decision dialog."
+    title="Decision dialog."
+    width="600">
+</p>
+<br>
+<p align="center">
+<em>Decision dialog between the decision maker and the team of exports.</em>
+</p>
+
 
 ### See also
 - [Decision analysis](./decision_analysis.md)
+- [Decision roles](./decision_roles.md)
 
 
 ### References
