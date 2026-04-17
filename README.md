@@ -30,7 +30,7 @@ Making good decisions is challenging, among others due to
 - Lack of decision-making culture
 - Not innate process
 
-Decision analysis can be seen as a dialogue between the [decision makers and the analysts](./decision_roles.md), aiming first at providing insight and clarity. Decision makers can then choose the best course of action[^2].
+Decision analysis can be seen as a dialogue between the [decision makers and the analysts](./domain/decision_roles.md), aiming first at providing insight and clarity. Decision makers can then choose the best course of action[^2].
 
 prisma-decision is an application follows the principles of see [decision analysis (DA)](./domain/decision_analysis.md) and of [decision quality (DQ)](./domain/decision_quality.md), and is a collaborative tool. It consists of
 
