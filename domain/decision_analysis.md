@@ -55,7 +55,7 @@ Typically, the formulation phase would produce an [influence diagram](./influenc
 
 ### Evaluation phase
 
-This phase models the connection between the decision alternatives and the corresponding values. It can be
+This phase models the connection between the decision alternatives and the corresponding values. It can consist of
 
 - Deterministic analysis
   - Value (business, dioscounted cash flow) models for the alternatives are developed
@@ -66,7 +66,7 @@ This phase models the connection between the decision alternatives and the corre
   - Risk aversion analysis
   - Best alternative is provisionally determined
   
-Within This phase tornado plots for the sensitivity analysis could be produced, probability functions can be elicitated, risk attitude considered, the optimum strategy can be found...
+Within this phase tornado plots for the sensitivity analysis could be produced, probability functions can be elicited, risk attitude considered, the optimum strategy can be found.
 
 
 > [!WARNING]
@@ -77,7 +77,7 @@ Within This phase tornado plots for the sensitivity analysis could be produced, 
 
 ### Appraisal phase
 
-This phase evaluates how robust is the decision to changes in the inputs. It includes for example
+The appraisal phase evaluates how robust the decision is to changes in the inputs. It includes for example
 - Sensitivity analysis
     - One-way sensitivity
     - two-way sensitivity
@@ -100,4 +100,4 @@ This phase evaluates how robust is the decision to changes in the inputs. It inc
 
 [^2]: Bratvold, R. B. and Begg, S. (2010). Making Good Decisions, Society of Petroleum Engineers,  DOI: https://doi.org/10.2118/9781555632588, ISBN electronic: 978-1-61399-948-6.
 
-*The description above is strongly inspired by the lecture of Pr. R. Bratvold at University of Stavanger*
+*The description above is strongly inspired by the lecture of Prof. R. B. Bratvold at University of Stavanger*

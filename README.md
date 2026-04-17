@@ -17,7 +17,7 @@ Decisions are the only way we can change our future life and for a company the b
 </p>
 
 
-prisma-decision aims at helping for problems located at the top of the pyramid, meaning following a rigorous normative decision making process. It aims at reproducing the framework described in Bratvold and Begg (2010):
+prisma-decision aims at helping problems located at the top of the pyramid, meaning following a rigorous normative decision-making process. It aims at reproducing the framework described in Bratvold and Begg (2010):
 
 "A scalable decision-making framework broadly applicable to most decision situations: with or without uncertainty, multi-objective or single objective, single decision or linked decisions, personal or business. (...) Its principles can be applied to analyses that span a range of times from less than an hour to months or years."[^2]
 
@@ -32,18 +32,18 @@ Making good decisions is challenging, among others due to
 
 Decision analysis can be seen as a dialogue between the [decision makers and the analysts](./domain/decision_roles.md), aiming first at providing insight and clarity. Decision makers can then choose the best course of action[^2].
 
-prisma-decision is an application follows the principles of see [decision analysis (DA)](./domain/decision_analysis.md) and of [decision quality (DQ)](./domain/decision_quality.md), and is a collaborative tool. It consists of
+prisma-decision is an application that follows the principles of [decision analysis (DA)](./domain/decision_analysis.md) and of [decision quality (DQ)](./domain/decision_quality.md). It is designed as a collaborative tool and consists of
 
-1. A frontend allowing
+1. A frontend enabling
     - Framing the decision opportunity
     - Structuring the decision model
     - Evaluating the decision model
-1. A Backend allowing
+1. A Backend enabling
     - Accessing all the decision data in a database
     - Computations on the decision models
 
 
-On the computation part, the decision model is expressed as an [influence diagram](./domain/influence_diagram.md) which is solved using the [pyagrum package](https://pyagrum.readthedocs.io/en/stable/index.html). The influence diagram can be converted into a [decision tree](./domain/decision_tree.md) for interpretation purpose.
+On the computational part, the decision model is expressed as an [influence diagram](./domain/influence_diagram.md) which is solved using the [pyagrum package](https://pyagrum.readthedocs.io/en/stable/index.html). The influence diagram can be converted into a [decision tree](./domain/decision_tree.md) for interpretation purpose.
  
 
 

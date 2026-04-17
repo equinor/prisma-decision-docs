@@ -17,18 +17,18 @@ The quality of a decision is evaluated on 6 elements. The quality of the decisio
 </p>
 
 ### Framing
-
+Framing makes sure that the right people are treating the right problem from the right perspective.
 A frame is a limited description of a problem that filters what is relevant. It addresses
 - Clear purpose (what has to be solved?)
 - Defined scope (boundaries)
 - Conscious perspective (level of details)
 
-A risk is to try to solve the problem immediately (plunging in), too narrow or too broad scope.
+A risk is to try to solve the problem immediately (plunging in) with a too narrow or too broad scope.
 
 
 ### Alternatives
 
-Suggesting alternatives is the creative part of the decisiona analysis process. There, scenarios must be significantly different to allow an optimal value creation. 
+Suggesting alternatives is the creative part of the decision analysis process. Alternatives must be significantly different, achievable and creative to allow an optimal value creation. 
 
 Risks can be:
 - Stay in comfort zone, don’t think outside the box (and thus miss valuable alternatives)
@@ -52,7 +52,7 @@ Examples of risks are:
 
 ### Value
 
-Decision criteria to rank alternatives need to be defined. It is important to know why an alternative to a decision is prefered to another one. This is also about being clear on the desired created value from the decision process. It is possible to have several criteria, some being in conflict with others.
+A decision criteria to rank and choose amongst alternatives needs to be defined. It is important to know why an alternative to a decision is preferred to another one. This is about being clear on the desired value creation from the decision process. It is possible to have several criteria, some being in conflict with others.
 
 A risk here is to neglect some key stakeholders, to ignore the intangibles.
 
@@ -64,7 +64,7 @@ This element addresses:
 - Uncertainties
 - Complexity and achieves clarity of choice
 
- [Influence diagrams](./influence_diagram.md) and/or a [decision trees](./decision_tree.md) are useful tools for clear thinking. 
+ [Influence diagrams](./influence_diagram.md) and/or [decision trees](./decision_tree.md) are useful tools for clear thinking. 
 
 Common risks are
 - Rely on intuition
@@ -74,7 +74,7 @@ Common risks are
 
 ### Commitment to action
 
-[Decision analysis](./decision_analysis.md) is an iterative process thich allows securing the quality of the decision process and building commitment to action. The [decision maker(s)](./decision_roles.md) needs to be involved in the framing and creation of alternatives as he (or they) owns them.
+[Decision analysis](./decision_analysis.md) is an iterative process which allows securing the quality of the decision process and building commitment to action. The [decision maker(s)](./decision_roles.md) needs to be involved in the framing and creation of alternatives as she (or they) owns them.
 
 <br>
 <p align="center">
@@ -96,4 +96,4 @@ Common risks are
 
 ### References
 
-*The description above is strongly inspired by the lecture of Pr. R. Bratvold at University of Stavanger*
+*The description above is strongly inspired by the lecture of Prof. R. B. Bratvold at University of Stavanger*
