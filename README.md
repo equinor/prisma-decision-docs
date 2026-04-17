@@ -2,7 +2,7 @@
 
 "A decision is a choice between two or more alternatives that involves an irrevocable allocation of resources."[^1]
 
-Decisions are the only way we can change our future life and for a company the only way to create value. Decisions are taken every days, some being simple and routine while others can be difficult and with strong impact. Having different levels of complexity, dynamic, and consequences, decisions thus require different analysis process. The figure (taken from [^1]) below illustrates this idea.
+Decisions are the only way we can change our future life and for a company the basis to create value. Decisions are taken every day, some are simple and routine, while others can be difficult and with strong impact. Having different levels of complexity, dynamic, and consequences, decisions thus require different analysis process. The figure (taken from [^1]) below illustrates this idea.
 
 <br>
 <p align="center">
