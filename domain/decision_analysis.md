@@ -50,7 +50,7 @@ The three first elements are also called decision basis:
 </p>
 
 
-Typically, the formulation phase would produce an [influence diagram](./influence_diagram.md) and/or a [decision tree](./decision_tree.md). In prisma-decision, on influence diagrams are build. The correspondig decision tree is computed from the influence diagram.
+Typically, the formulation phase would produce an [influence diagram](./influence_diagram.md) and/or a [decision tree](./decision_tree.md). In prisma-decision, an influence diagrams ios built. The corresponding decision tree is computed from the influence diagram.
 
 
 ### Evaluation phase
