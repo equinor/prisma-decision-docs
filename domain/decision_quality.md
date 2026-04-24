@@ -85,7 +85,7 @@ Common risks are
 </p>
 <br>
 <p align="center">
-<em>Decision dialog between the decision maker and the team of exports.</em>
+<em>Decision dialog between the decision maker and the team of exports. The top of the figure represents the role of the decision maker(s), and the bottom is the role of the analysts team. Between are arrows showing the interactions between the two.</em>
 </p>
 
 
