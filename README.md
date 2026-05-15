@@ -43,7 +43,7 @@ prisma-decision is an application that follows the principles of [decision analy
     - Computations on the decision models
 
 
-On the computational part, the decision model is expressed as an [influence diagram](./domain/influence_diagram.md) which is solved using the [pyagrum package](https://pyagrum.readthedocs.io/en/stable/index.html). The influence diagram can be converted into a [decision tree](./domain/decision_tree.md) for interpretation purpose.
+On the computational part, the decision model is expressed as an [influence diagram](./domain/influence_diagram.md) which is solved using the [pyagrum package](./domain/pyagrum.md). The influence diagram can be converted into a [decision tree](./domain/decision_tree.md) for interpretation purpose.
  
 
 
