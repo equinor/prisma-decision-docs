@@ -53,6 +53,8 @@
 
 ## V
 
+[Value of Information](./voi.md)
+
 ## W
 
 ## X
