@@ -96,8 +96,8 @@ The appraisal phase evaluates how robust the decision is to changes in the input
 
 ### References
 
-[^1]: Howard, R. A. (1968). The foundation of Decision Analysis, IEEE Transactions on Systems Sciences and Cybernetics, Vol. SSC-4, No. 3.
+[^1]: Howard, R. A. (1968). *The foundation of Decision Analysis*. IEEE Transactions on Systems Sciences and Cybernetics, Vol. SSC-4, No. 3.
 
-[^2]: Bratvold, R. B. and Begg, S. (2010). Making Good Decisions, Society of Petroleum Engineers,  DOI: https://doi.org/10.2118/9781555632588, ISBN electronic: 978-1-61399-948-6.
+[^2]: Bratvold, R. B. and Begg, S. (2010). *Making Good Decisions*. Society of Petroleum Engineers,  DOI: https://doi.org/10.2118/9781555632588, ISBN electronic: 978-1-61399-948-6.
 
 *The description above is strongly inspired by the lecture of Prof. R. B. Bratvold at University of Stavanger*

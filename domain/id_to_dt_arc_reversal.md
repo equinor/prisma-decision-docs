@@ -257,14 +257,14 @@ It is worth noticing that one of the advantages of influence diagrams (ID) to de
 
 ### References
 
-[^1]: Howard, Ronald A., and Matheson, James E. (2005) Influence Diagrams. Decision Analysis 2(3):127-143.
+[^1]: Howard, Ronald A., and Matheson, James E. (2005) *Influence Diagrams*. Decision Analysis 2(3):127-143.
 https://doi.org/10.1287/deca.1050.0020
 
-Shachter, Ross. (1990) An Ordered Examination of Influence Diagrams. Networks. 20. 535 - 563. 10.1002/net.3230200505.
+Shachter, Ross. (1990) *An Ordered Examination of Influence Diagrams*. Networks. 20. 535 - 563. 10.1002/net.3230200505.
 [@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)
 
-[^2]: Shachter, Ross. (1990) An Ordered Examination of Influence Diagrams. Networks. 20. 535 - 563. 10.1002/net.3230200505.
+[^2]: Shachter, Ross. (1990) *An Ordered Examination of Influence Diagrams*. Networks. 20. 535 - 563. 10.1002/net.3230200505.
 [@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)
 
-[^3]: Shenoy, Prakash. (2000). Valuation network representation and solution of asymmetric decision problems. European Journal of Operational Research. 121. 579-608.
+[^3]: Shenoy, Prakash. (2000). *Valuation network representation and solution of asymmetric decision problems*. European Journal of Operational Research. 121. 579-608.
 [@ResearchGate](https://www.researchgate.net/publication/29441258_Valuation-Based_Systems_for_Bayesian_Decision_Analysis)
