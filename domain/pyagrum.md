@@ -179,13 +179,13 @@ for which only one value is not possible can be represented as
 
 ### References
 
-[^1]: Ducamp, G., Gonzales, C.,Wuillemin, P.-H. (2020) *aGrUM/pyAgrum : a Toolbox to Build Models and Algorithms for Probabilistic Graphical Models in Python*. International Conference on Probabilistic Graphical Models, Skørping, Denmark. [@HAL](https://hal.science/hal-03135721v1)
+[^1]: Ducamp, G., Gonzales, C., Wuillemin, P.-H. (2020) *aGrUM/pyAgrum : a Toolbox to Build Models and Algorithms for Probabilistic Graphical Models in Python*. International Conference on Probabilistic Graphical Models, Skørping, Denmark. [@HAL](https://hal.science/hal-03135721v1)
 
 
 [^2]: Lauritzen, S. L., and Nilsson, D. (2001) *Representing and Solving Decision Problems with Limited Information*. Management Science. 47. (9) 1235 - 1251. 10.1287/mnsc.47.9.1235.9779. [@ResearchGate](https://www.researchgate.net/publication/2368443_Representing_and_Solving_Decision_Problems_with_Limited_Information)
 
 
-[^3]: Nilsson, D., and Lauritzen, S. L. (2000) *Evaluating influence diagrams using LIMIDs*. Proceedings of the 16th Conference on Uncertainty in Artificial Intelligence, (eds.), Boutilier, C. and Goldszmidt, M., 436 - 445, [@ResearchGate](https://www.researchgate.net/https://www.researchgate.net/publication/234140127_Evaluating_influence_diagrams_using_LIMIDs),
+[^3]: Nilsson, D., and Lauritzen, S. L. (2000) *Evaluating influence diagrams using LIMIDs*. Proceedings of the 16th Conference on Uncertainty in Artificial Intelligence, (eds.), Boutilier, C. and Goldszmidt, M., 436 - 445, [@ResearchGate](https://www.researchgate.net/publication/234140127_Evaluating_influence_diagrams_using_LIMIDs),
 [@arxiv](https://arxiv.org/pdf/1301.3881)
 
 

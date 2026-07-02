@@ -11,7 +11,7 @@ The general rules for converting an influence diagram (ID) to a decision tree (D
 
 A decision-tree network is a network for which every node with a path to a decision node, $d$, is observed at the time of the decision $d$.
 
-Converting an influence diagram into a decision-tree network requires reversing arcs [^1,^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
+Converting an influence diagram into a decision-tree network requires reversing arcs [^1] [^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
 $$
 P(Y|X) = \frac{P(Y)}{P(X)}P(X|Y).
 $$
@@ -26,12 +26,12 @@ This can easily be extended to the case of a node with several parents (as long 
 
 <p align="center">
 <img src="./figures/arc_reversal_shachter.svg" 
-    alt="Probabilisitic influence diagram from Shachter (1990)"
-    title="Probabilisitic influence diagram from Shachter (1990)"
+    alt="Probabilistic influence diagram from Shachter (1990)"
+    title="Probabilistic influence diagram from Shachter (1990)"
     width="400">
 </p>
 
-*Probailisitic influence diagram from Shachter (1990).*
+*Probabilistic influence diagram from Shachter (1990).*
 
 In the case represented above, both nodes $i$ and $j$ have several parents. Let's see the case where we want to reverse the arc to $j\rightarrow i$.
 
@@ -79,12 +79,12 @@ It is necessary to have it in $H$ as we have $L\rightarrow j \rightarrow i$, mea
 
 <p align="center">
 <img src="./figures/arc_reversal_shachter_after.svg" 
-    alt="Probabilisitic influence diagram after arc reversal from Shachter (1990)"
-    title="Probabilisitic influence diagram after arc reversal from Shachter (1990)"
+    alt="Probabilistic influence diagram after arc reversal from Shachter (1990)"
+    title="Probabilistic influence diagram after arc reversal from Shachter (1990)"
     width="400">
 </p>
 
-*Probailisitic influence diagram from Shachter (1990) after arc reversal to $j\rightarrow i$.*
+*Probabilistic influence diagram from Shachter (1990) after arc reversal to $j\rightarrow i$.*
 
 
 <br/>
@@ -102,7 +102,7 @@ A decision window contains the chance nodes observed for the first time between 
 
 ### Example
 
-Let consider the used car buyer problem represented on the Figure below.
+Let's consider the used car buyer problem represented on the Figure below.
 
 <br>
 
@@ -244,9 +244,9 @@ In the influence diagram above, there is a path from the state of the car, $O$ t
 
 *Decision tree network of the used car buyer problem. T is the decision of testing or not, A is the decision of purchasing, R is the result of the test, O is the initial state of the car, and V<sub>1</sub>, V<sub>2</sub>, and V<sub>3</sub> are the cost of the test, the profit of the car and the maintenance costs.*
 
-In that case, we have the same partial order, but $R$ point to the chance node $O$ which is _not_ in an earlier decision window. Therefore, no arc reversal has to be done.
+In that case, we have the same partial order, but $R$ points to the chance node $O$ which is _not_ in an earlier decision window. Therefore, no arc reversal has to be done.
 
-It is worth noticing that one of the advantages of influence diagrams (ID) to decision trees (DT) is that probabilities can be entered as observed. For example, we can naturally model the causality or the way conditional probabilities are measured, as for example, observing symptomes given the possible prevalence of a disease. The DT may use the reciprocal conditional probability and the brute-force conversion by computing the joint may be intractable in problems that have many chance variables [^3].
+It is worth noticing that one of the advantages of influence diagrams (ID) to decision trees (DT) is that probabilities can be entered as observed. For example, we can naturally model the causality or the way conditional probabilities are measured, as for example, observing symptoms given the possible prevalence of a disease. The DT may use the reciprocal conditional probability and the brute-force conversion by computing the joint may be intractable in problems that have many chance variables [^3].
 
 
 ### See also
