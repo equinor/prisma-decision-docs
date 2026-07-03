@@ -73,9 +73,10 @@ $$
 - [Influence diagram](./influence_diagram.md)
 - Topological order
 - [Decision tree](./decision_tree.md)
+- Junction tree
 
 
 ### References
 
-[^1]: Shachter, Ross. (1990). *An Ordered Examination of Influence Diagrams*. Networks. 20. 535 - 563. 10.1002/net.3230200505.
+[^1]: Shachter, Ross. (1990). An Ordered Examination of Influence Diagrams. Networks. 20. 535 - 563. 10.1002/net.3230200505.
 [@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)
