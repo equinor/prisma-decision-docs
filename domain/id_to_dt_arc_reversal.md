@@ -12,10 +12,14 @@ The general rules for converting an influence diagram (ID) to a decision tree (D
 A decision-tree network is a network for which every node with a path to a decision node, $d$, is observed at the time of the decision $d$.
 
 Converting an influence diagram into a decision-tree network requires reversing arcs [^1] [^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
+Converting an influence diagram into a decision-tree network requires reversing arcs [^1,^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
+
 $$
 P(Y|X) = \frac{P(Y)}{P(X)}P(X|Y).
 $$
+
 $P(X)$ is the marginal distribution defined by
+
 $$
 P(X) = \sum_{y\in Y} P(X|Y=y)P(Y=y).
 $$
@@ -266,5 +270,5 @@ Shachter, Ross. (1990) *An Ordered Examination of Influence Diagrams*. Networks.
 [^2]: Shachter, Ross. (1990) *An Ordered Examination of Influence Diagrams*. Networks. 20. 535 - 563. 10.1002/net.3230200505.
 [@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)
 
-[^3]: Shenoy, Prakash. (2000). *Valuation network representation and solution of asymmetric decision problems*. European Journal of Operational Research. 121. 579-608.
+[^3]: Shenoy, Prakash. (2000) *Valuation network representation and solution of asymmetric decision problems*. European Journal of Operational Research. 121. 579-608.
 [@ResearchGate](https://www.researchgate.net/publication/29441258_Valuation-Based_Systems_for_Bayesian_Decision_Analysis)
