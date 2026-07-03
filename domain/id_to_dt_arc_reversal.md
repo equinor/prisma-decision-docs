@@ -11,17 +11,17 @@ The general rules for converting an influence diagram (ID) to a decision tree (D
 
 A decision-tree network is a network for which every node with a path to a decision node, $d$, is observed at the time of the decision $d$.
 
-Converting an influence diagram into a decision-tree network requires reversing arcs [^1] [^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
-Converting an influence diagram into a decision-tree network requires reversing arcs [^1,^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
+Converting an influence diagram into a decision-tree network requires reversing arcs [^1][^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
+Converting an influence diagram into a decision-tree network requires reversing arcs [^1][^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
 
 $$
-P(Y|X) = \frac{P(Y)}{P(X)}P(X|Y).
+P(Y \mid X) = \frac{P(Y)}{P(X)}P(X \mid Y).
 $$
 
 $P(X)$ is the marginal distribution defined by
 
 $$
-P(X) = \sum_{y\in Y} P(X|Y=y)P(Y=y).
+P(X) = \sum_{y\in Y} P(X \mid Y=y)P(Y=y).
 $$
 
 This can easily be extended to the case of a node with several parents (as long as no cycle is created). We use the case described by Shachter (1990)[^2]
@@ -45,14 +45,19 @@ We follow[^2] and set
 - $C(j)^{old}$ are the parents of $j$ before the arc reversal
 
 and
+
 $$
-H = C(i)^{old}\cup C(j)^{old} \setminus\{i\}.
+H = C(i)^{old}\cup C(j)^{old} \setminus\lbrace i\rbrace.
 $$
+
 The joint distribution is thus
+
 $$
-P(i,j,H) = P(i\mid C(i)^{old})P(j\mid i, C(j)^{old}\setminus\{i\})P(H), 
+P(i,j,H) = P\left(i\mid C(i)^{old}\right)P\left(j\mid i, C(j)^{old}\setminus \lbrace i \rbrace \right)P(H), 
 $$
-and since wehave both $C(i)^{old} \subseteq H$ and $C(j)^{old}\setminus\{i\}) \subseteq H$, this can be rewritten as
+
+and since we have both $C(i)^{old} \subseteq H$ and $C(j)^{old}\setminus\lbrace i\rbrace \subseteq H$, this can be rewritten as
+
 $$
 \begin{align*}
 P(i,j,H) 
@@ -60,22 +65,29 @@ P(i,j,H)
   & = P(j\mid H)P(i\mid j, H)P(H), 
 \end{align*}
 $$
+
 so
+
 $$
 P(j\mid i, H) = \frac{P(j\mid H)}{P(i\mid H)}P(i\mid j, H),
 $$
+
 with
+
 $$
 P(i\mid H) = \sum_{j'} P(i \mid j', H)P(j'\mid H).
 $$
+
 This is the Bayes' theorem.
 
 **Remark:**
 
 In the above, introducing the dependency to all the common parents $H$ means that extra arcs have been added $(J\rightarrow j \text{ and } L\rightarrow i)$. These only represent the possibility of dependency and not an existing one. This means that 
+
 $$
 P(i\mid H) = P(i \mid J,K,L) := P(i\mid J,K).
 $$
+
 It is necessary to have it in $H$ as we have $L\rightarrow j \rightarrow i$, meaning $L$ affects $i$ indirectly. 
 
 
@@ -142,29 +154,36 @@ We have (for example)
 
 and 
 
-| $P(R\|O)$ | closed  | open  | diffuse |
+| $P(R \mid O)$ | closed  | open  | diffuse |
 |-----------|---------|-------|---------|
 |   soaking | 0.5     |  0.4  |   0.1   |
 |   wet     | 0.3     |  0.4  |   0.3   |
 |   dry     | 0.1     |  0.3  |   0.6   |
 
-And we therefore compute $P(O|R)$ as
+And we therefore compute $P(O \mid R)$ as
+
 $$
-P(O|R) = \frac{P(O)}{P(R)}P(R|O),
+P(O \mid R) = \frac{P(O)}{P(R)}P(R \mid O),
 $$
+
 and the marginal distribution defined by
+
 $$
 P(R) = \sum_{o\in O} P(R|O)P(O),
 $$
+
 that is
+
 $$
 \begin{align*}
-P(R) & = P(R|O=\text{soaking})P(O=\text{soaking}) \\
-    & \qquad + P(R|O=\text{wet})P(O=\text{wet}) \\
-    & \qquad + P(R|O=\text{dry})P(O=\text{dry}),
+P(R) & = P(R \mid O=\text{soaking})P(O=\text{soaking}) \\
+    & \qquad + P(R \mid O=\text{wet})P(O=\text{wet}) \\
+    & \qquad + P(R \mid O=\text{dry})P(O=\text{dry}),
 \end{align*}
 $$
+
 which gives
+
 $$
 \begin{align*}
 P(R=\text{closed}) & = 0.5\times0.2 + 0.3\times0.3 + 0.1\times0.5 = 0.24, \\
@@ -172,50 +191,51 @@ P(R=\text{open})   & = 0.4\times0.2 + 0.4\times0.3 + 0.3\times0.5 = 0.35, \\
 P(R=\text{diffuse}) & = 0.1\times0.2 + 0.3\times0.3 + 0.6\times0.5 = 0.41.
 \end{align*}
 $$
+
 The marginal distributions are thus 
 
 | $P(R)$ | closed  | open | diffuse |
 |--------|---------|------|---------|
 |        |  0.24   | 0.35 |  0.41   |
 
-Then, the full probability $P(O|R)$ can be computed as
+Then, the full probability $P(O \mid R)$ can be computed as
 
 $$
 \begin{align*}
-P(R=\text{closed}|O=\text{soaking})  
-  & = P(R=\text{closed}|O=\text{soaking}) P(O=\text{soaking}), \\
+P(O=\text{soaking}\mid R=\text{closed})  
+  & = P(R=\text{closed} \mid O=\text{soaking}) P(O=\text{soaking}), \\
   & = 0.5 \times 0.2 / 0.24, \\
   & = 0.42. \\
-P(R=\text{closed}|O=\text{wet})        
-  & = P(R=\text{closed}|O=\text{wet}) P(O=\text{wet}), \\
+P(O=\text{wet} \mid R=\text{closed})        
+  & = P(R=\text{closed} \mid O=\text{wet}) P(O=\text{wet}), \\
   & = 0.3 \times 0.3 / 0.24, \\
   & = 0.37. \\
-P(R=\text{closed}|O=\text{dry})      
-  & = P(R=\text{closed}|O=\text{dry}) P(O=\text{dry}), \\
+P(O=\text{dry} \mid R=\text{closed})      
+  & = P(R=\text{closed} \mid O=\text{dry}) P(O=\text{dry}), \\
   & = 0.1 \times 0.5 / 0.24, \\
   & = 0.21. \\
-P(R=\text{open}|O=\text{soaking})    
-  & = P(R=\text{open}|O=\text{soaking}) P(O=\text{soaking}), \\
+P(O=\text{soaking} \mid R=\text{open})    
+  & = P(R=\text{open} \mid O=\text{soaking}) P(O=\text{soaking}), \\
   & = 0.4 \times 0.2 / 0.35, \\
   & = 0.23. \\
-P(R=\text{open}|O=\text{wet})        
-  & = P(R=\text{open}|O=\text{wet}) P(O=\text{wet}), \\
+P(O=\text{wet} \mid R=\text{open})        
+  & = P(R=\text{open} \mid O=\text{wet}) P(O=\text{wet}), \\
   & = 0.4 \times 0.3 / 0.35, \\
   & = 0.34. \\
-P(R=\text{open}|O=\text{dry})        
-  & = P(R=\text{open}|O=\text{dry}) P(O=\text{dry}), \\
+P(O=\text{dry} \mid R=\text{open})        
+  & = P(R=\text{open} \mid O=\text{dry}) P(O=\text{dry}), \\
   & = 0.3 \times 0.5 / 0.35, \\
   & = 0.43. \\
-P(R=\text{diffuse}|O=\text{soaking}) 
-  & = P(R=\text{diffuse}|O=\text{soaking}) P(O=\text{soaking}), \\
+P(O=\text{soaking} \mid R=\text{diffuse}) 
+  & = P(R=\text{diffuse} \mid O=\text{soaking}) P(O=\text{soaking}), \\
   & = 0.1 \times 0.2 / 0.41, \\
   & = 0.05. \\
-P(R=\text{diffuse}|O=\text{wet})     
-  & = P(R=\text{diffuse}|O=\text{wet}) P(O=\text{wet}), \\
+P(O=\text{wet} \mid R=\text{diffuse})     
+  & = P(R=\text{diffuse} \mid O=\text{wet}) P(O=\text{wet}), \\
   & = 0.3 \times 0.3 / 0.41, \\
   & = 0.22. \\
-P(R=\text{diffuse}|O=\text{dry})     
-  & = P(R=\text{diffuse}|O=\text{dry}) P(O=\text{dry}), \\
+P(O=\text{dry} \mid R=\text{diffuse})     
+  & = P(R=\text{diffuse} \mid O=\text{dry}) P(O=\text{dry}), \\
   & = 0.6 \times 0.5 / 0.41 \\
   & = 0.73. \\
 \end{align*}
@@ -223,7 +243,7 @@ $$
 
 and 
 
-| $P(O\|R)$ | soaking  | wet    | dry      |
+| $P(O \mid R)$ | soaking  | wet    | dry      |
 |-----------|----------|--------|----------|
 |   closed  | 0.42     |  0.37  |   0.21   |
 |   open    | 0.23     |  0.34  |   0.43   |
@@ -261,13 +281,10 @@ It is worth noticing that one of the advantages of influence diagrams (ID) to de
 
 ### References
 
-[^1]: Howard, Ronald A., and Matheson, James E. (2005) Influence Diagrams. Decision Analysis 2(3):127-143.
+[^1]: Howard, Ronald A., and Matheson, James E. (2005) *Influence Diagrams*. Decision Analysis 2(3):127-143.
 https://doi.org/10.1287/deca.1050.0020
 
-Shachter, Ross. (1990) An Ordered Examination of Influence Diagrams. Networks. 20. 535 - 563. 10.1002/net.3230200505.
-[@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)
-
-[^2]: Shachter, Ross. (1990) An Ordered Examination of Influence Diagrams. Networks. 20. 535 - 563. 10.1002/net.3230200505.
+[^2]: Shachter, Ross. (1990) *An Ordered Examination of Influence Diagrams*. Networks. 20. 535 - 563. 10.1002/net.3230200505.
 [@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)
 
 [^3]: Shenoy, Prakash. (2000) *Valuation network representation and solution of asymmetric decision problems*. European Journal of Operational Research. 121. 579-608.
