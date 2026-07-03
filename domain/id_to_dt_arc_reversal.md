@@ -103,11 +103,11 @@ It is necessary to have it in $H$ as we have $L\rightarrow j \rightarrow i$, mea
     width="400">
 </p>
 
-*Probabilistic influence diagram from Shachter (1990) after arc reversal to $j\rightarrow i$.*
+*Probabilistic influence diagram from Shachter (1990) after arc reversal to* $j \rightarrow i$.
 
 
-<br/>
-A condition for deciding about the need of reversing arcs is given in [^2]: 
+
+A condition for deciding about the need of reversing arcs is given in[^2]: 
 
 <br/>
 
