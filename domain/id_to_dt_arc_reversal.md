@@ -11,7 +11,10 @@ The general rules for converting an influence diagram (ID) to a decision tree (D
 
 A decision-tree network is a network for which every node with a path to a decision node, $d$, is observed at the time of the decision $d$.
 
-Converting an influence diagram into a decision-tree network requires reversing arcs [^1][^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
+Converting an influence diagram into a decision-tree network requires reversing arcs [^1][^2]. 
+An arrow joining two nodes in an influence diagram may be reversed provided that all probability assignments are based on the same set of information. Thus, the first step in this reversal is to assure that these nodes have a common information state. 
+
+Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
 Converting an influence diagram into a decision-tree network requires reversing arcs [^1][^2]. Reversing an arc between 2 chance nodes in an ID $X\rightarrow Y$ to $Y\rightarrow X$, is equivalent to applying the Bayes' theorem
 
 $$
