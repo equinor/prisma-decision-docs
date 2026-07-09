@@ -11,7 +11,11 @@
 
 ## D
 
+[Decision analysis](./decision_analysis.md)
+
 [Decision tree](./decision_tree.md)
+
+[Decision quality](./decision_quality.md)
 
 ## E
 
@@ -30,6 +34,9 @@
 ## K
 
 ## L
+
+[Limited memory influence diagram (LIMID)](./limid.md)
+
 
 ## M
 
