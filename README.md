@@ -46,6 +46,11 @@ prisma-decision is an application that follows the principles of [decision analy
 On the computational part, the decision model is expressed as an [influence diagram](./domain/influence_diagram.md) which is solved using the [pyagrum package](./domain/pyagrum.md). The influence diagram can be converted into a [decision tree](./domain/decision_tree.md) for interpretation purpose.
  
 
+## Related Repositories
+
+- [prisma-decision-api](https://github.com/equinor/prisma-decision-api) - Backend API
+- [prisma-decision-web](https://github.com/equinor/prisma-decision-web) - Frontend application
+
 
 ## Citing
 
