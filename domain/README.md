@@ -25,4 +25,4 @@ Callibri, normal
 - Chance nodes: circle or ellipse with color #a6ffa6ff
 - Value nodes: diamond with color #aae6f6ff
 - Arc: arrow with color #b3b3b3ff
-- Revelation ling: arrow with color #d35f5fff
+- Revelation link: arrow with color #d35f5fff
