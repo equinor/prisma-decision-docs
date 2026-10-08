@@ -6,10 +6,7 @@ This folder gathers technical notes.
 
 ### New documentation
 
-The technical notes have a header of top level. All items under those should start with a header of level 2.
-
 References to papers should be linked to open-source access when possible.
-
 
 ### Figures
 

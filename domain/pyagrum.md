@@ -1,4 +1,4 @@
-## pyagrum
+# pyagrum
 
 The [pyagrum package](https://pyagrum.readthedocs.io/en/stable/index.html)[^1] is used for solving influence diagrams in prisma-decision. This means it actually deal with [Limited Memory Influence Diagrams (LIMIDs)](./limid.md) and evaluate the optimum policy using the Single Policy Update method based on the Shafer-Shenoy architecture[^2][^3][^4]. 
 
@@ -170,14 +170,14 @@ for which only one value is not possible can be represented as
 
 
 
-### See also
+## See also
 
 - [Influence diagram](./influence_diagram.md)
 - [LIMID](./limid.md)
   
 
 
-### References
+## References
 
 
 [^1]: Ducamp, G., Gonzales, C., Wuillemin, P.-H. (2020) *aGrUM/pyAgrum : a Toolbox to Build Models and Algorithms for Probabilistic Graphical Models in Python*. International Conference on Probabilistic Graphical Models, Skørping, Denmark. [@HAL](https://hal.science/hal-03135721v1)
