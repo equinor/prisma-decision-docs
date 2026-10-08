@@ -1,15 +1,3 @@
----
-id: domain.decision-analyis
-type: domain
-related:
-- domain.decision-quality
-- domain.decision-dialog
-workflow-step:
-- workflow.frame
-- workflow.structure
-- workflow.evaluate
----
-
 # Decision analysis
 
 Decision analysis is a term that describes a combination of philosophy, methodology, practice, and application useful in the formal introduction of logic and preferences to the decisions of the world. Making a decision is allocating irreversibly resources, that is following a course of action. The [decision maker](./decision_roles.md) is supposed to do so in a world which is uncertain, complex, and dynamic[^1].

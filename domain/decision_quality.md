@@ -1,13 +1,3 @@
----
-id: domain.decision-quality
-type: domain
-related:
-- domain.decision-analysis
-- domain.decision-dialog
-workflow-step:
-- workflow.decision-quality-assessment
----
-
 # Decision quality
 
 The quality of a decision should be evaluated before the outcome of the decision is known. In particular, outcome quality should not be mistaken with decision quality!

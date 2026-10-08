@@ -1,18 +1,3 @@
----
-id: workflow.decision-quality-assessment
-type: workflow
-title: Assess Decision Quality
-process_stage: evaluate
-outputs:
-- concept.decision-quality
-related:
-- concept.decision-quality
-- workflow.evaluate
-keywords:
-- decision quality
----
-
-
 ← [Previous](./project_information.md) 
 
 # Decision Quality assessment
