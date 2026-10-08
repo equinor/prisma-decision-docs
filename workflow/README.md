@@ -8,7 +8,7 @@ This folder gathers information about Prisma usage. Prisma suggests a set of pos
 ## Getting started
 
 
-## [Frame](./frame.md)
+## Frame
 
 ### Project Information
 
@@ -20,13 +20,13 @@ This folder gathers information about Prisma usage. Prisma suggests a set of pos
 
 ### Whiteboard
 
-## [Structure](./structure.md)
+## Structure
 
 ### Influence Diagram
 
 ### Decision Tree
 
-## [Evaluate](./evaluate.md)
+## Evaluate
 
 - [Assessments](./decision_quality.md)
 

@@ -1,105 +1,82 @@
 # Decision quality
 
-The quality of a decision should be evaluated before the outcome of the decision is known. In particular, outcome quality should not be mistaken with decision quality!
+Decision quality describes how well a decision is framed, evaluated, and prepared for action. Assess it before the outcome is known. A favorable outcome does not prove that the decision was well made, and an unfavorable outcome does not by itself prove that the decision process was poor.
 
-The quality of a decision is evaluated on 6 elements, and is determined by the quality of the poorest element. The main idea is to evaluate if further effort in these six elements could change the course of action. 
+Decision quality has six elements. The overall decision is constrained by its weakest element: a serious gap in one area can undermine the whole decision. Use the six elements to find gaps that further analysis or discussion could resolve and that could change the course of action.
 
-<br>
 <p align="center">
-<img src="./figures/dq_wheel.png" 
-    alt="The 6 elements of decision quality"
-    title="The 6 elements of decision quality"
-    width="400">
+<img src="./figures/dq_wheel.png" alt="The six elements of decision quality" width="400">
 </p>
-<br>
+<p align="center"><em>The six elements of decision quality.</em></p>
+
+## The six elements
+
+### 1. Appropriate Frame
+
+**Purpose:** Define the right decision problem, its purpose, scope, boundaries, and perspective. A frame describes what is relevant to the decision and at what level of detail.
+
+**Examine:** Is the decision question clear? Are the objectives, decision-makers, and boundaries explicit? Is the scope too broad or too narrow? Are the underlying assumptions and the "do nothing" case considered?
+
+**Common failure modes:** Starting to solve the problem before agreeing what it is; addressing a symptom instead of the root issue; or excluding important objectives, stakeholders, or parts of the problem.
+
+### 2. Creative, Doable Alternatives
+
+**Purpose:** Develop sufficiently distinct options that are both achievable and capable of creating value. Comparing alternatives is what makes it possible to choose among different courses of action.
+
+**Examine:** Are the options meaningfully different? Are they feasible? Have the status quo, hybrid approaches, and unconventional options been considered where relevant?
+
+**Common failure modes:** Considering only one option; comparing minor variations of the same idea; or settling on a preferred option before exploring other possibilities.
+
+### 3. Meaningful, Reliable Information
+
+**Purpose:** Use relevant, trustworthy information to create alternatives and reduce uncertainty that matters to the decision.
+
+**Examine:** What is known and uncertain? Are assumptions supported by current, credible evidence? Are dependencies between important variables understood? Would obtaining more information be worth its cost?
+
+Decision analysis focuses on uncertainty when resolving it could change the choice. The **value of information** is the benefit of obtaining information that could improve the decision.
+
+**Common failure modes:** Ignoring or biasing uncertainty; relying on weak evidence; or spending effort on information that does not affect the decision while leaving important uncertainties unresolved.
+
+### 4. Clear Values and Trade-offs
+
+**Purpose:** Make explicit what outcomes matter and how alternatives will be compared. A decision can involve several criteria that conflict with one another.
+
+**Examine:** Are the decision criteria clear and prioritized? Do stakeholders agree on the desired value and acceptable risks? Are trade-offs and less tangible considerations acknowledged?
+
+Examples of trade-offs include value versus safety, value versus emissions, value versus schedule, cost versus optionality, and short-term versus long-term value.
+
+**Common failure modes:** Leaving success criteria undefined; overlooking important stakeholders or intangible values; or allowing hidden objectives and unresolved priorities to drive the choice.
+
+### 5. Logically Correct Reasoning
+
+**Purpose:** Connect the available information, assumptions, uncertainties, and values to a clear choice. Alternatives should be compared on a fair basis and at a comparable level of maturity.
+
+**Examine:** Is the reasoning transparent? Have assumptions, uncertainty, and relevant scenarios been considered? Does the recommendation follow from the analysis? Is the choice robust to changes in important assumptions?
+
+[Influence diagrams](./influence_diagram.md) and [decision trees](./decision_tree.md) can help represent dependencies and clarify the logic of a decision.
+
+**Common failure modes:** Relying on intuition without examining it; ignoring uncertainty; comparing alternatives inconsistently; or becoming lost in detail without clarifying the choice.
+
+### 6. Commitment to Action
+
+**Purpose:** Build ownership of the decision and prepare the organization to carry it out. Commitment is strengthened when decision-makers take part in framing the problem and developing alternatives.
+
+**Examine:** Do decision-makers and stakeholders support the decision? Are responsibilities, resources, risks, and implementation needs understood? Can the people responsible for action explain what was decided and why?
+
+Decision analysis is iterative: discussion between decision-makers and analysts can improve the analysis while building shared understanding and commitment.
+
+**Common failure modes:** Producing a sound analysis without clear ownership; overlooking implementation barriers; or involving decision-makers only after the important choices have already been made.
+
 <p align="center">
-<em>The 6 elements of decision quality.</em>
+<img src="./figures/da_dialog.png" alt="Dialogue between decision-makers and the analysis team." width="600">
 </p>
+<p align="center"><em>Decision-makers and analysts interact throughout the decision process. Their dialogue supports both analysis and commitment to action.</em></p>
 
+## Related concepts
 
-## Description
-
-### Appropriate Frame 
-
-Framing makes sure that the right people are treating the right problem from the right perspective.
-A frame is a limited description of a problem that filters what is relevant. It addresses
-- Clear purpose (what has to be solved?)
-- Defined scope (boundaries)
-- Conscious perspective (level of details)
-
-A risk is to try to solve the problem immediately (plunging in) with a too narrow or too broad scope.
-
-
-### Creative, Doable Alternatives
-
-Suggesting alternatives is the creative part of the decision analysis process. Alternatives must be significantly different, achievable and creative to allow an optimal value creation. 
-
-Risks can be:
-- Stay in comfort zone, don’t think outside the box (and thus miss valuable alternatives)
-- Too similar scenarios (no real alternatives)
-
-
-### Meaningful, Reliable Information 
-
-- Information can be expansive (new alternatives)
-- Information can be reductive (reduce uncertainty)
-- Understand uncertainty range
-- Variable dependencies
-- Value of information
-
-**Remark:** Decision Analysis is concerned about an uncertainty only if it is able to change the decision.
-
-Examples of risks are:
-- Uncertainty ignored or biased
-- Focus on what we know how to work on but not necessarily on what is important
-
-
-### Clear Values and Trade-offs 
-
-A decision criteria to rank and choose amongst alternatives needs to be defined. It is important to know why an alternative to a decision is preferred to another one. This is about being clear on the desired value creation from the decision process. It is possible to have several criteria, some being in conflict with others.
-
-A risk here is to neglect some key stakeholders, to ignore the intangibles.
-
-
-### Logically Correct Reasoning
-
-This element addresses:
-- Correctness of decision logic: Alternatives competing on equal basis and maturity level
-- Uncertainties
-- Complexity and achieves clarity of choice
-
- [Influence diagrams](./influence_diagram.md) and/or [decision trees](./decision_tree.md) are useful tools for clear thinking. 
-
-Common risks are
-- Rely on intuition
-- Ignore uncertainty
-- Get mired in details and complexity
-
-
-### Commitment to action
-
-[Decision analysis](./decision_analysis.md) is an iterative process which allows securing the quality of the decision process and building commitment to action. The [decision maker(s)](./decision_roles.md) needs to be involved in the framing and creation of alternatives as she (or they) owns them.
-
-<br>
-<p align="center">
-<img src="./figures/da_dialog.png" 
-    alt="Decision dialog."
-    title="Decision dialog."
-    width="600">
-</p>
-<br>
-<p align="center">
-<em>Decision dialog between the decision maker and the team of exports. The top of the figure represents the role of the decision maker(s), and the bottom is the role of the analysts team. Between are arrows showing the interactions between the two.</em>
-</p>
-
-
-
-
-## See also
 - [Decision analysis](./decision_analysis.md)
 - [Decision roles](./decision_roles.md)
 
+## Reference
 
-## References
-
-*The description above is strongly inspired by the lecture of Prof. R. B. Bratvold at University of Stavanger*
+*This description is strongly inspired by a lecture by Professor R. B. Bratvold at the University of Stavanger.*
