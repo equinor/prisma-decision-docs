@@ -256,19 +256,19 @@ The assessment workflow described here is:
 1. Select **Assessments** in the menu bar.
 
    <p align="center">
-   <img src="./figures/button - evaluation.png" alt="Assessments button in the menu bar." width="60">
+   <img src="./figures/dq_assignment/button - evaluation.png" alt="Assessments button in the menu bar." width="60">
    </p>
 
 2. If no assessment exists, select the create-assessment button in the upper-right corner.
 
    <p align="center">
-   <img src="./figures/button - Create Assessment.png" alt="Create Assessment button." width="200">
+   <img src="./figures/dq_assignment/button - Create Assessment.png" alt="Create Assessment button." width="200">
    </p>
 
 3. Enter a name and select **Add Assessment**.
 
    <p align="center">
-   <img src="./figures/popup - Create Assessment.png" alt="Create Assessment dialog." width="500">
+   <img src="./figures/dq_assignment/popup - Create Assessment.png" alt="Create Assessment dialog." width="500">
    </p>
 
 ### Score and submit
@@ -276,7 +276,7 @@ The assessment workflow described here is:
 For each element, enter a score from 0 to 100. Add comments to explain the score and any remaining concerns; comments are optional but recommended. When finished, submit the assessment.
 
 <p align="center">
-<img src="./figures/window - Create Assessment.png" alt="Decision quality assessment window." width="800">
+<img src="./figures/dq_assignment/window - Create Assessment.png" alt="Decision quality assessment window." width="800">
 </p>
 
 ### Complete and view the assessment
