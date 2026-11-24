@@ -1,6 +1,6 @@
-## Arc reversal in ID to DT conversion
+# Arc reversal in ID to DT conversion
 
-### Theoretical considerations
+## Theoretical considerations
 
 The general rules for converting an influence diagram (ID) to a decision tree (DT) can be found in [^1]. There, among others, 2 definitions are introduced
 - A *decision network* is an influence diagram:
@@ -119,7 +119,7 @@ arc.
 A decision window contains the chance nodes observed for the first time between two consecutive decisions (see [Partial order](./partial_order.md)).
 
 
-### Example
+## Example
 
 Let's consider the used car buyer problem represented on the Figure below.
 
@@ -276,13 +276,13 @@ In that case, we have the same partial order, but $R$ points to the chance node 
 It is worth noticing that one of the advantages of influence diagrams (ID) to decision trees (DT) is that probabilities can be entered as observed. For example, we can naturally model the causality or the way conditional probabilities are measured, as for example, observing symptoms given the possible prevalence of a disease. The DT may use the reciprocal conditional probability and the brute-force conversion by computing the joint may be intractable in problems that have many chance variables [^3].
 
 
-### See also
+## See also
 - [Influence diagram](./influence_diagram.md)
 - [Decision tree](./decision_tree.md)
 - [Partial order](./partial_order.md)
 
 
-### References
+## References
 
 [^1]: Howard, Ronald A., and Matheson, James E. (2005) *Influence Diagrams*. Decision Analysis 2(3):127-143.
 https://doi.org/10.1287/deca.1050.0020

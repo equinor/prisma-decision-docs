@@ -1,1 +1,1 @@
-## LImited Memory Influence Diagram (LIMID)
+# LImited Memory Influence Diagram (LIMID)

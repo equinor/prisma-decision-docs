@@ -1,17 +1,16 @@
-## Roles in decision making
+# Roles in decision making
 
 
-### Decision maker
-
-
-
-### Expert
-
-Also called analyst.
-
-
-### Facilitator
+## Decision maker
 
 
 
-### Decision analyst
+## Expert
+
+
+
+## Facilitator
+
+
+
+## Decision analyst

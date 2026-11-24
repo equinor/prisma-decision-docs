@@ -46,6 +46,44 @@ prisma-decision is an application that follows the principles of [decision analy
 On the computational part, the decision model is expressed as an [influence diagram](./domain/influence_diagram.md) which is solved using the [pyagrum package](./domain/pyagrum.md). The influence diagram can be converted into a [decision tree](./domain/decision_tree.md) for interpretation purpose.
  
 
+## Documentation
+
+### Structure
+
+| User question           |  Folder          | 
+|-------------------------|------------------| 
+| How do I do?            |  workflow        | 
+| What does this mean?    |  domain          | 
+| Why won't it work?      |  troubleshooting |
+
+
+### Workflow
+
+1. Define Decision Context
+1. Define Objectives
+1. Raise and structure Issues
+1. Develop a strategy table
+1. Build and solve an Influence Diagram
+1. Convert an Influence Diagram into a Decision Tree
+1. Assess Decision Quality
+
+### Concepts
+
+- Decision Analysis
+- Opportunity
+- Objectives
+- Issues
+- Strategies
+- Influence Diagram
+- Decision Tree
+- Decision Quality
+
+### Troubleshooting
+
+- Invalid Model
+
+
+
 ## Related Repositories
 
 - [prisma-decision-api](https://github.com/equinor/prisma-decision-api) - Backend API
@@ -53,6 +91,8 @@ On the computational part, the decision model is expressed as an [influence diag
 
 
 ## Citing
+
+Hanea, R., Muller, T., Alerini, M., Bellout, M., and Chitan D., 2026, Structured Decision Analysis for Complex Decisions: Insights from Pilot Studies, European Association of Geoscientists & Engineers, ECMOR 2026, Sep 2026, Volume 2026, p.1 – 16, DOI: https://doi.org/10.3997/2214-4609.202637015
 
 
 ## Licence

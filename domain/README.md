@@ -6,10 +6,7 @@ This folder gathers technical notes.
 
 ### New documentation
 
-The technical notes have a header of top level. All items under those should start with a header of level 2.
-
 References to papers should be linked to open-source access when possible.
-
 
 ### Figures
 
@@ -25,4 +22,4 @@ Callibri, normal
 - Chance nodes: circle or ellipse with color #a6ffa6ff
 - Value nodes: diamond with color #aae6f6ff
 - Arc: arrow with color #b3b3b3ff
-- Revelation ling: arrow with color #d35f5fff
+- Revelation link: arrow with color #d35f5fff

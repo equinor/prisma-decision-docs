@@ -1,1 +1,1 @@
-## Influence diagrams
+# Influence diagrams
