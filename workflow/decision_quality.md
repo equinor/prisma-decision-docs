@@ -20,15 +20,15 @@ For definitions of the six elements, see [Decision quality](../domain/decision_q
 
 ### Overall score anchors
 
-Scores range from 0 to 100. A higher score means fewer or less significant concerns. The values below are anchors; use judgment for scores between them.
+Scores range from 0 to 5. A higher score means fewer or less significant concerns. The values below are anchors; use judgment for scores between them.
 
 | Score | Interpretation |
 |-------|----------------|
-| 100 | Essentially no material concern. |
-| 80 | Minor concerns only. |
-| 60 | Several concerns, but not enough to stop the decision. |
-| 40 | Important concerns that should make the team cautious. |
-| 20 | Serious concerns that undermine confidence. |
+| 5 | Essentially no material concern. |
+| 4 | Minor concerns only. |
+| 3 | Several concerns, but not enough to stop the decision. |
+| 2 | Important concerns that should make the team cautious. |
+| 1 | Serious concerns that undermine confidence. |
 | 0 | Fundamentally unacceptable. |
 
 The element-specific descriptions below are illustrative calibration guides. They are not a checklist and do not define a separate scoring formula.
@@ -63,11 +63,11 @@ The element-specific descriptions below are illustrative calibration guides. The
 
 | Score range | Typical situation |
 |-------------|-------------------|
-| 0-20 | The problem is poorly defined, or stakeholders disagree on the objective. |
-| 30-50 | A problem statement exists, but important objectives or constraints are missing. |
-| 60-75 | Most stakeholders understand and agree on the main objectives. |
-| 80-89 | The decision statement is clear, objectives are explicit, and boundaries are agreed. |
-| 90-100 | There is full alignment on scope, objectives, success criteria, and value drivers. |
+| 0-1 | The problem is poorly defined, or stakeholders disagree on the objective. |
+| 2 | A problem statement exists, but important objectives or constraints are missing. |
+| 3 | Most stakeholders understand and agree on the main objectives. |
+| 4 | The decision statement is clear, objectives are explicit, and boundaries are agreed. |
+| 5 | There is full alignment on scope, objectives, success criteria, and value drivers. |
 
 ### 2. Creative, Doable Alternatives
 
@@ -96,11 +96,11 @@ The element-specific descriptions below are illustrative calibration guides. The
 
 | Score range | Typical situation |
 |-------------|-------------------|
-| 0-20 | Only one option is being considered. |
-| 30-50 | There are two alternatives, but they are minor variations. |
-| 60-75 | Several distinct options have been considered. |
-| 80-89 | A broad range of options, including unconventional solutions, has been considered. |
-| 90-100 | The alternatives likely span the full opportunity space. |
+| 0-1 | Only one option is being considered. |
+| 2 | There are two alternatives, but they are minor variations. |
+| 3 | Several distinct options have been considered. |
+| 4 | A broad range of options, including unconventional solutions, has been considered. |
+| 5 | The alternatives likely span the full opportunity space. |
 
 ### 3. Meaningful, Reliable Information
 
@@ -131,11 +131,11 @@ Decision analysis is concerned with uncertainty when resolving it could change t
 
 | Score range | Typical situation |
 |-------------|-------------------|
-| 0-20 | Data is largely missing or unsupported. |
-| 30-50 | Uncertainty is significant and evidence is weak. |
-| 60-75 | Technical work is good, but some key uncertainties remain. |
-| 80-89 | High-quality data and analysis address the key uncertainties. |
-| 90-100 | Information is robust and has been independently challenged. |
+| 0-1 | Data is largely missing or unsupported. |
+| 2 | Uncertainty is significant and evidence is weak. |
+| 3 | Technical work is good, but some key uncertainties remain. |
+| 4 | High-quality data and analysis address the key uncertainties. |
+| 5 | Information is robust and has been independently challenged. |
 
 ### 4. Clear Values and Trade-offs
 
@@ -165,11 +165,11 @@ Examples of trade-offs in industry projects include value versus safety, value v
 
 | Score range | Typical situation |
 |-------------|-------------------|
-| 0-20 | Success criteria are undefined. |
-| 30-50 | Conflicting objectives remain unresolved. |
-| 60-75 | The main priorities are understood. |
-| 80-89 | Trade-offs among value drivers are explicit. |
-| 90-100 | Value drivers are transparently weighted and decision-makers are aligned. |
+| 0-1 | Success criteria are undefined. |
+| 2 | Conflicting objectives remain unresolved. |
+| 3 | The main priorities are understood. |
+| 4 | Trade-offs among value drivers are explicit. |
+| 5 | Value drivers are transparently weighted and decision-makers are aligned. |
 
 ### 5. Logically Correct Reasoning
 
@@ -201,11 +201,11 @@ Influence diagrams and decision trees can help make the reasoning clear. See [In
 
 | Score range | Typical situation |
 |-------------|-------------------|
-| 0-20 | Conclusions are based mainly on assumptions or opinions. |
-| 30-50 | There are significant gaps in the reasoning. |
-| 60-75 | The reasoning is generally sound. |
-| 80-89 | There is a clear analytical chain from assumptions to recommendation. |
-| 90-100 | The reasoning is rigorous and withstands challenge. |
+| 0-1 | Conclusions are based mainly on assumptions or opinions. |
+| 2 | There are significant gaps in the reasoning. |
+| 3 | The reasoning is generally sound. |
+| 4 | There is a clear analytical chain from assumptions to recommendation. |
+| 5 | The reasoning is rigorous and withstands challenge. |
 
 ### 6. Commitment to Action
 
@@ -235,11 +235,11 @@ Decision analysis is iterative. Involving decision-makers in framing the problem
 
 | Score range | Typical situation |
 |-------------|-------------------|
-| 0-20 | Key stakeholders oppose the decision. |
-| 30-50 | There is significant organizational resistance. |
-| 60-75 | There is general alignment, but some concerns remain. |
-| 80-89 | Stakeholders are committed and resources have been identified. |
-| 90-100 | Ownership, alignment, and execution readiness are strong. |
+| 0-1 | Key stakeholders oppose the decision. |
+| 2 | There is significant organizational resistance. |
+| 3 | There is general alignment, but some concerns remain. |
+| 4 | Stakeholders are committed and resources have been identified. |
+| 5 | Ownership, alignment, and execution readiness are strong. |
 
 ## Using assessments in Prisma
 
@@ -251,29 +251,37 @@ The assessment workflow described here is:
 4. The assessment is marked complete.
 5. Project users can view the evaluation in the group.
 
-### Create an assessment
+### Assessing DQ
 
-1. Select **Assessments** in the menu bar.
+Select **Assessments** in the menu bar.
 
    <p align="center">
-   <img src="./figures/dq_assignment/button - evaluation.png" alt="Assessments button in the menu bar." width="60">
+   <img src="./figures/dq_assignment/button - evaluation.png" alt="Assessments button in the menu bar." width="200">
    </p>
 
-2. If no assessment exists, select the create-assessment button in the upper-right corner.
+
+### Create an assessment
+> [!WARNING]
+> Only the facilitator can do this.
+
+
+1. Select the create-assessment button in the upper-right corner.
+
 
    <p align="center">
    <img src="./figures/dq_assignment/button - Create Assessment.png" alt="Create Assessment button." width="200">
    </p>
 
-3. Enter a name and select **Add Assessment**.
+2. Enter a name and select **Add Assessment**.
 
    <p align="center">
    <img src="./figures/dq_assignment/popup - Create Assessment.png" alt="Create Assessment dialog." width="500">
    </p>
 
+
 ### Score and submit
 
-For each element, enter a score from 0 to 100. Add comments to explain the score and any remaining concerns; comments are optional but recommended. When finished, submit the assessment.
+For each element, enter a score from 0 to 5. Add comments to explain the score and any remaining concerns; comments are optional but recommended. When finished, submit the assessment (button on the lower right).
 
 <p align="center">
 <img src="./figures/dq_assignment/window - Create Assessment.png" alt="Decision quality assessment window." width="800">
@@ -281,7 +289,30 @@ For each element, enter a score from 0 to 100. Add comments to explain the score
 
 ### Complete and view the assessment
 
-After assessments have been submitted, mark the assessment as complete. The current workflow documentation does not specify which role can perform this action. Project users can view the evaluation in the group.
+When assessments have been submitted but not completed, a red dot next to the assessment button in the menu bar appears
+
+<p align="center">
+<img src="./figures/dq_assignment/button - Incomplete evaluation.png" alt="Assessments button in the menu bar with indication of uncomplete assessments." width="200">
+</p>
+
+After assessments have been submitted, mark the assessment as complete
+
+<p align="center">
+<img src="./figures/dq_assignment/window - Complete assessment.png" alt="Submitted assessments (first assessment)." width="500">
+</p>
+
+The window indicates the scores for each element and the teamm agreement for each of these scores. If the assessment is not the first one, the score difference is also shown
+
+<p align="center">
+<img src="./figures/dq_assignment/window - Complete assessment update.png" alt="Submitted assessments (subsequent assessment)." width="500">
+</p>
+
+The evolution of scores across assessments is shown as a line plot
+
+<p align="center">
+<img src="./figures/dq_assignment/window - Time evolution.png" alt="Evolution of scores across assessments." width="800">
+</p>
+
 
 ## Related documentation
 
