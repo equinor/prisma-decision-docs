@@ -1,0 +1,10 @@
+# Applied by setup.sh on top of prisma-decision-api/docker-compose.yml.
+# Some Docker setups (e.g. GitHub Codespaces) block direct container-to-container
+# traffic on the compose network, which makes every solver call from the .NET API
+# to FastAPI hang. Route it through the host-published port instead.
+services:
+  api:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      FastApiService__BaseUrl: http://host.docker.internal:8000

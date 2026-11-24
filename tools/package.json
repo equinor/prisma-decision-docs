@@ -1,0 +1,15 @@
+{
+  "name": "prisma-decision-docs-tools",
+  "private": true,
+  "type": "module",
+  "description": "Documentation system: runs the Prisma web app locally and captures how-to figures",
+  "scripts": {
+    "setup": "bash setup.sh",
+    "status": "bash setup.sh status",
+    "stop": "bash setup.sh stop",
+    "capture": "node capture.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.65.1"
+  }
+}
