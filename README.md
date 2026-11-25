@@ -60,6 +60,8 @@ On the computational part, the decision model is expressed as an [influence diag
 
 ### Workflow
 
+See the [page-by-page workflow guides](./workflow/README.md) for illustrated instructions.
+
 1. Define Decision Context
 1. Define Objectives
 1. Raise and structure Issues
@@ -68,7 +70,7 @@ On the computational part, the decision model is expressed as an [influence diag
 1. Convert an Influence Diagram into a Decision Tree
 1. Assess Decision Quality
 
-### Concepts
+### Domain
 
 - Decision Analysis
 - Opportunity
@@ -84,43 +86,11 @@ On the computational part, the decision model is expressed as an [influence diag
 - Invalid Model
 
 
-## Automatic figure making
+## Tools
 
-The screenshots used in the how-to pages (`workflow/figures/`) are not taken by hand. The scripts in [tools/](./tools/README.md) run the Prisma web app and API locally, load an example project, and capture every page of the web app. Re-run them whenever the web app changes so the documentation stays in sync.
+### Automatic figure making
 
-### Requirements
-
-- Docker (with Compose), Node.js 20+, git, `python3`
-- Network access to GitHub, Docker Hub and npm on the first run
-
-No Equinor login is needed: the app runs in *Research* mode with a local SQLite database.
-
-### Run
-
-```bash
-tools/setup.sh              # 1. clone or update web/API sources, start everything
-node tools/capture.mjs      # 2. import the example project, capture all pages
-tools/setup.sh stop         # 3. optional: stop the local services
-```
-
-The first `setup.sh` takes a few minutes (Docker images, npm packages, headless Chromium). Later runs take a few seconds and only redo what changed. `capture.mjs` imports the project export found in `workflow/projects/`, screenshots each page into `workflow/figures/<page>/`, removes the imported project again, and records the captured web/API versions in `workflow/figures/versions.json`.
-
-### Check whether figures are outdated
-
-```bash
-tools/setup.sh check        # fetch upstream, compare with the versions the figures were made from
-```
-
-It reports how many commits the web app and API have gained since the last capture; if there are any, run `tools/setup.sh` and `node tools/capture.mjs` again and commit the updated figures.
-
-### Conventions
-
-- One folder per web app page: `workflow/figures/<page>/` (e.g. `issues`, `influence_diagram`, `assessments`), see the page list in [tools/pages.mjs](./tools/pages.mjs).
-- File names follow `<element> - <description>.png`, e.g. `page - Issues.png`, `button - Create Assessment.png`, `popup - Create Assessment.png`.
-- The example project is a Prisma export (JSON) stored in `workflow/projects/`. Pass another one with `node tools/capture.mjs --project <file>`.
-- Options such as `--pages issues,strategies`, `--theme dark` or `--viewport 1920x1080` are described in [tools/README.md](./tools/README.md).
-
-
+See the [documentation tooling guide](./tools/README.md) for generating and checking screenshots. Re-capture and commit updated figures when the web app changes.
 
 ## Related Repositories
 

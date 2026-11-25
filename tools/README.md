@@ -4,6 +4,9 @@ Runs the Prisma web app locally and captures the figures used in the how-to page
 under [`workflow/`](../workflow). The app runs in **Research mode**: no Equinor login,
 SQLite database, everything on your machine. Nothing here is deployed.
 
+See [documentation creation prompts](./documentation-prompts.md) for the
+requests and workflow to inform a future documentation-update agent.
+
 ## Requirements
 
 - Docker (with Compose), Node.js 20+, git, `python3` on the `PATH`
@@ -61,7 +64,7 @@ Figures go to `workflow/figures/<page>/`, one folder per web app page:
 | `decision_tree` | Structure → Decision tree |
 | `compact_tree` | Structure → Compact tree |
 | `solution_tree` | Structure → Solution tree |
-| `assessments` | Evaluate → Assessments |
+| `dq_assignment` | Evaluate → Assessments (select with `--pages assessments`) |
 
 File naming follows `<element> - <description>.png`, e.g. `page - Issues.png`,
 `button - Create Assessment.png`, `popup - Create Assessment.png`. Elements used:
@@ -73,6 +76,44 @@ function; see `homeSteps` for the pattern (locate elements by role/placeholder,
 `shot(name, locator)` for a padded element clip, `shot(name)` for the full page,
 leave the page as found). Element shots are taken from the live page, so the
 app's state (open popup, typed text, toggled favorite) is what gets captured.
+
+Every figure has an editable Markdown sidecar with the same basename, for example
+`issues/button - Create Issue.png` and `issues/button - Create Issue.md`.
+Create the sidecar in `workflow/figures/<page>/` before adding a new `shot()`.
+Use a heading, a short description of the action or visible state, and a relative
+image link; see the [figure source layout](../workflow/figures/README.md).
+These fragments are merged into page guides using an explicit editorial order.
+
+Capture reads the sidecar before taking each screenshot and fails if it is missing
+or empty. It never regenerates the source prose, so recapturing preserves edits.
+With `--out`, the matching sidecars are copied alongside the screenshots; edit the
+source files under `workflow/figures/`, not the output copies.
+
+## Merging page guides
+
+```bash
+node tools/merge-guides.mjs          # rebuild the 12 page guides under workflow/
+node tools/merge-guides.mjs --check  # fail if a guide differs from its sources
+```
+
+Edit [`guides.mjs`](./guides.mjs) to change section headings, introductions, or the
+order of figures. The order follows user tasks, not capture order or filenames.
+Edit the figure sidecars to change the individual descriptions. Do not edit the
+generated page guides directly: merging replaces them.
+
+The merger preserves the source fragments, adjusts heading levels, rebases image
+links for the page guides, and adds previous/next navigation. It fails on missing,
+duplicate, or unmerged figure fragments. It needs no running app or API.
+
+[`workflow/README.md`](../workflow/README.md) is the manually maintained process
+index. The detailed [decision-quality guidance](../workflow/decision_quality.md)
+is also maintained separately; the generated assessments guide links to it.
+
+Check figure/description pairs, generated guides, and their links:
+
+```bash
+node --test tools/figure-descriptions.test.mjs tools/merge-guides.test.mjs
+```
 
 `workflow/figures/versions.json` records the web/API commits, project file, theme
 and viewport the figures were captured from. `setup.sh status` compares the

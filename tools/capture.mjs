@@ -117,13 +117,17 @@ const captured = [];
 try {
 	for (const def of pages) {
 		if (selected && !selected.has(def.folder)) continue;
-		const folder = path.join(outDir, def.folder);
+		const folder = path.join(outDir, def.figureFolder ?? def.folder);
 		await mkdir(folder, { recursive: true });
 		// shot(name)                 full viewport
 		// shot(name, locator, {pad}) the element plus `pad` px of context around it
 		const shot = async (name, locator, { pad = 12 } = {}) => {
 			const file = path.join(folder, `${name}.png`);
+			const descriptionFile = path.join(DOCS_DIR, 'workflow/figures', def.figureFolder ?? def.folder, `${name}.md`);
+			const description = await readFile(descriptionFile, 'utf8');
+			if (!description.trim()) throw new Error(`Empty figure description: ${descriptionFile}`);
 			if (locator) {
+				await locator.scrollIntoViewIfNeeded();
 				const box = await locator.boundingBox();
 				if (!box) throw new Error(`${def.folder}/${name}: element not visible`);
 				const x = Math.max(0, box.x - pad);
@@ -131,13 +135,18 @@ try {
 				const clip = {
 					x,
 					y,
-					width: Math.min(width - x, box.width + 2 * pad),
-					height: Math.min(height - y, box.height + 2 * pad),
+					width: Math.min(width, box.x + box.width + pad) - x,
+					height: Math.min(height, box.y + box.height + pad) - y,
 				};
+				if (clip.width <= 0 || clip.height <= 0) {
+					throw new Error(`${def.folder}/${name}: element is outside the viewport`);
+				}
 				await page.screenshot({ path: file, animations: 'disabled', clip });
 			} else {
 				await page.screenshot({ path: file, animations: 'disabled' });
 			}
+			const outputDescription = path.join(folder, `${name}.md`);
+			if (outputDescription !== descriptionFile) await writeFile(outputDescription, description);
 			captured.push(path.relative(DOCS_DIR, file));
 		};
 		const url = def.route === null ? `${WEB_URL}/` : `${WEB_URL}/project/${projectId}/${def.route}`;
@@ -153,6 +162,7 @@ try {
 				shot,
 				projectId,
 				projectFile: args.project ? path.resolve(args.project) : undefined,
+				api,
 				waitForApiIdle,
 				fitCanvas,
 			});

@@ -1,4 +1,4 @@
-← [Previous](./project_information.md) 
+[Assessments page guide](./assessments.md) | [Workflow](./README.md)
 
 # Assess decision quality
 
@@ -320,4 +320,4 @@ The evolution of scores across assessments is shown as a line plot
 - [Decision analysis](../domain/decision_analysis.md)
 - [Decision roles](../domain/decision_roles.md)
 
-← [Previous](./project_information.md)
+[Assessments page guide](./assessments.md) | [Workflow](./README.md)
