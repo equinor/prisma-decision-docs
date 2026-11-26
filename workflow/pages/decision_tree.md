@@ -74,7 +74,7 @@ Select a decision or uncertainty node to highlight the path leading to it. To re
 
 ## Check branch values near a leaf
 
-On uncertainty branches, **Prob** is the probability of that outcome, shown as a decimal, and **Utility** is the utility assigned to the branch. In this example, 
+On uncertainty branches, **Prob** is the probability of that outcome, shown as a decimal, and **Utility** is the utility assigned to the branch. In this example,
 
 $$
 0.25 \times 100 + 0.50 \times 75 + 0.25 \times 25 = 68.75,

@@ -118,7 +118,7 @@ export const guides = [
 	{
 		page: 'whiteboard',
 		title: 'Whiteboard',
-		intro: 'Use the whiteboard to explore and organize issues with the team. Sheets provide separate spaces for different discussions or arrangements.',
+		intro: 'Use the whiteboard to draft ideas or explore and organize issues with the team. Sheets provide separate spaces for different discussions or arrangements.',
 		sections: [
 			{ title: 'Overview and navigation', figures: ['button - Whiteboard', 'page - Whiteboard'] },
 			{ title: 'Navigate and choose tools', figures: ['menu - Whiteboard toolbar', 'field - Tool modes'] },
@@ -146,8 +146,8 @@ export const guides = [
 			{ title: 'Explore states and alternative views', figures: [
 				'button - Expand All', 'page - Influence diagram expanded', 'page - Influence diagram shape view',
 			] },
-			{ title: 'Explore what-if scenarios', figures: ['page - What-if scenario'] },
 			{ title: 'Review calculated results', figures: ['card - Expected value metrics', 'window - Policy Table'] },
+			{ title: 'Explore what-if scenarios', figures: ['page - What-if scenario'] },
 		],
 	},
 	{

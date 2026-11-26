@@ -28,7 +28,6 @@ Hover over the information button to see a short explanation of the matrix axes.
 
 ![Stakeholder matrix explanation tooltip](<../figures/stakeholder_matrix/popup - About this view.png>)
 
-
 ### Interpret the matrix axes
 
 The matrix groups stakeholders as **Partner closely** (high on both axes), **Consult** (highly affected, less influence), **Keep informed** (high influence, less affected), or **Observe** (low on both). Use these groups as prompts for discussing engagement, not as a substitute for understanding a stakeholder's role.

@@ -746,8 +746,65 @@ const compactTreeSteps = async ({ page, shot }) => {
 	await shot('card - Decision node', page.locator('.react-flow__node').first(), { pad: 8 });
 };
 
-const solutionTreeSteps = async ({ page, shot }) => {
+const solutionTreeSteps = async ({ page, shot, waitForApiIdle }) => {
 	await shot('card - Decision node', page.locator('.react-flow__node').first(), { pad: 8 });
+
+	const fitSolution = async () => {
+		const canvas = page.locator('.react-flow__pane');
+		const canvasBox = await canvas.boundingBox();
+		if (!canvasBox) throw new Error('Solution tree: canvas is not visible');
+		const bounds = async () => page.locator('.react-flow__node').evaluateAll(nodes => {
+			const boxes = nodes.flatMap(node => [node, ...node.querySelectorAll('button')])
+				.map(node => node.getBoundingClientRect())
+				.filter(box => box.width > 0 && box.height > 0);
+			if (boxes.length === 0) throw new Error('Solution tree: no visible nodes to fit');
+			return {
+				left: Math.min(...boxes.map(box => box.left)),
+				right: Math.max(...boxes.map(box => box.right)),
+				top: Math.min(...boxes.map(box => box.top)),
+				bottom: Math.max(...boxes.map(box => box.bottom)),
+			};
+		});
+		let box = await bounds();
+		const center = { x: canvasBox.x + canvasBox.width / 2, y: canvasBox.y + canvasBox.height / 2 };
+		await page.mouse.move(center.x, center.y);
+		for (let i = 0; box.right - box.left > canvasBox.width * 0.9 || box.bottom - box.top > canvasBox.height * 0.8; i++) {
+			if (i >= 100) throw new Error('Solution tree: could not fit nodes in the canvas');
+			await page.mouse.wheel(0, 50);
+			await settle(page);
+			box = await bounds();
+		}
+		await page.mouse.move(canvasBox.x + 20, canvasBox.y + 20);
+		await page.mouse.down();
+		await page.mouse.move(
+			canvasBox.x + 20 + center.x - (box.left + box.right) / 2,
+			canvasBox.y + 20 + center.y - (box.top + box.bottom) / 2,
+			{ steps: 10 },
+		);
+		await page.mouse.up();
+		await settle(page);
+	};
+
+	// A full expansion is too dense for a readable overview at the default viewport.
+	for (let i = 0; i < 2; i++) {
+		await fitSolution();
+		const expandable = page.locator('.react-flow__node-expandNode').first();
+		if (await expandable.count() === 0) {
+			if (i === 0) throw new Error('Solution tree: no branch available to expand');
+			break;
+		}
+		const id = await expandable.getAttribute('data-id');
+		if (!id) throw new Error('Solution tree: expandable node has no ID');
+		await expandable.getByRole('button').click();
+		await waitForApiIdle();
+		await page.waitForFunction(nodeId =>
+			![...document.querySelectorAll('.react-flow__node-expandNode')]
+				.some(node => node.getAttribute('data-id') === nodeId), id);
+		await settle(page, 800);
+	}
+	await fitSolution();
+	await park(page);
+	await shot('page - Solution tree');
 };
 
 // --------------------------------------------------------------- assessments

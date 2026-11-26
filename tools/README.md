@@ -86,6 +86,8 @@ continues.
 Decision-tree capture expands one path only as far as a leaf, rather than the
 full tree. It also captures the scissors marker on a pruned branch and the
 envelope-shaped leaf marker with its result labels for the branch-end symbol guide.
+The solution-tree overview expands two branches along a path and fits the result
+to the canvas; the full tree is too dense to read at the standard viewport.
 
 Every figure has an editable Markdown sidecar with the same basename, for example
 `issues/button - Create Issue.png` and `issues/button - Create Issue.md`.

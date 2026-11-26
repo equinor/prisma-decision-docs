@@ -35,6 +35,8 @@ Select **Create Issue** to open the form for adding an issue to the project.
 Use angle brackets around image paths containing spaces. Keep links relative to
 the fragment so it renders independently. Avoid page-level navigation or numbered
 process steps inside fragments: the same figure may support different guides.
+Descriptions can also follow the image. When a fragment starts with an image, a
+multi-figure guide section places that image before its subsection heading.
 
 Add the Markdown file before introducing its screenshot in
 [pages.mjs](../../tools/pages.mjs). Recapturing replaces PNGs, not these descriptions.

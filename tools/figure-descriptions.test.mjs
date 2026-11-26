@@ -16,7 +16,11 @@ test('every figure has a reusable Markdown description and a matching image link
 			const sidecar = file.replace(/\.png$/, '.md');
 			assert.ok(files.includes(sidecar), `Missing description: ${entry.name}/${sidecar}`);
 			const content = await readFile(path.join(folder, sidecar), 'utf8');
-			assert.match(content, /^## .+\n\n(?:[^#!\s][^\n]*(?:\n[^#!\s][^\n]*)*\n\n)+!\[[^\]]+\]\(<\.\/.+\.png>\)\n(?:\n(?:> .+\n)+)?$/);
+			assert.match(content, /^## .+\n\n/);
+			const images = [...content.matchAll(/!\[[^\]]+\]\(<\.\/[^>]+\.png>\)/g)];
+			assert.equal(images.length, 1, `Expected one image: ${entry.name}/${sidecar}`);
+			assert.ok(content.replace(/^## .+\n\n/, '').replace(images[0][0], '').trim(),
+				`Missing description: ${entry.name}/${sidecar}`);
 			assert.ok(content.includes(`](<./${file}>)\n`), `Wrong image link: ${entry.name}/${sidecar}`);
 			figures++;
 		}

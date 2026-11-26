@@ -24,11 +24,8 @@ Enter a descriptive project name in the creation form, using a distinguishing qu
 
 ![Empty Create Project form](<../figures/home/popup - Create Project.png>)
 
-
 > [!WARNING]
 > Project names are not unique. Make sure to have an explicit name!
-
-
 
 ### Review the project name
 

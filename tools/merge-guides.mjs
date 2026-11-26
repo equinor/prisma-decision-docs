@@ -38,6 +38,10 @@ for (const [index, guide] of guides.entries()) {
 		for (const name of section.figures) {
 			const fragment = await readFile(path.join(source, `${name}.md`), 'utf8');
 			parts.push(fragment.trim()
+				.replace(/^## (.+)\n\n(!\[[^\]]*\]\(<\.\/[^>]+>\))\n\n/, (match, title, image) =>
+					section.figures.length > 1 && title !== section.title
+						? `${image}\n\n### ${title}\n\n`
+						: match)
 				.replace(/^## (.+)\n\n/, (_, title) =>
 					section.figures.length === 1 || title === section.title ? '' : `### ${title}\n\n`)
 				.replace(/!\[([^\]]*)\]\(<\.\/([^>]+)>\)/g, `![$1](<../figures/${figureFolder}/$2>)`));
