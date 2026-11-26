@@ -1,5 +1,5 @@
 ## Expand one branch
 
-Select a plus node to reveal the next part of that branch of the decision tree. A plus placeholder indicates more detail is available; it is not a terminal outcome or an unexplained final result.
+Select the plus button at the end of a branch to reveal the next decisions or uncertain outcomes along that path. Repeat on other plus buttons to explore additional branches.
 
-![Decision tree branch expansion node](<./button - Expand node.png>)
+![Plus button at the end of a decision tree branch](<./button - Expand node.png>)

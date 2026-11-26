@@ -2,7 +2,7 @@
 
 # Objectives
 
-[Previous: Project information](./project_information.md) | [Workflow](./README.md) | [Next: Stakeholder matrix](./stakeholder_matrix.md)
+[Previous: Stakeholder matrix](./stakeholder_matrix.md) | [Workflow](../workflow.md) | [Next: Issues](./issues.md)
 
 Record what the decision should achieve before comparing alternatives. Add objectives, clarify their descriptions, and classify them as the team refines its understanding.
 
@@ -12,13 +12,13 @@ Record what the decision should achieve before comparing alternatives. Add objec
 
 Select **Objectives** in the sidebar to review or add the project's objectives.
 
-![Objectives sidebar entry](<./figures/objectives/button - Objectives.png>)
+![Objectives sidebar entry](<../figures/objectives/button - Objectives.png>)
 
 ### Define objectives
 
 Use the objectives page to record what the decision should achieve, describe each objective, and classify its type. Keep desired outcomes separate from alternatives: for example, creating value is an objective, while running a pilot is a possible course of action. Recorded objectives frame the discussion; they do not automatically become weighted terms in the value model.
 
-![Objectives page](<./figures/objectives/page - Objectives.png>)
+![Objectives page](<../figures/objectives/page - Objectives.png>)
 
 ## Add an objective
 
@@ -26,19 +26,19 @@ Use the objectives page to record what the decision should achieve, describe eac
 
 Enter the objective's name and description, then select its type in the creation form.
 
-![Empty objective creation form](<./figures/objectives/field - Create objective.png>)
+![Empty objective creation form](<../figures/objectives/field - Create objective.png>)
 
 ### Review a new objective
 
 The filled form illustrates a budget-related objective classified as **Mean**; review all fields before creating it.
 
-![Objective creation form with example values](<./figures/objectives/field - Create objective filled.png>)
+![Objective creation form with example values](<../figures/objectives/field - Create objective filled.png>)
 
 ### Create the objective
 
 After completing the required fields, select **Create objective** to add it to the project.
 
-![Create objective button](<./figures/objectives/button - Create objective.png>)
+![Create objective button](<../figures/objectives/button - Create objective.png>)
 
 ## Review and edit objectives
 
@@ -46,19 +46,19 @@ After completing the required fields, select **Create objective** to add it to t
 
 Each objective row shows its name, description, type, and dates, with controls for editing, reordering, and deletion.
 
-![Objective row](<./figures/objectives/card - Objective.png>)
+![Objective row](<../figures/objectives/card - Objective.png>)
 
 ### Edit an objective name
 
 Select the objective name to edit it inline; press Enter to save or Escape to cancel.
 
-![Inline objective name editor](<./figures/objectives/field - Edit objective name.png>)
+![Inline objective name editor](<../figures/objectives/field - Edit objective name.png>)
 
 ### Edit an objective description
 
 Select the description to edit it inline; press Enter to save, Shift+Enter for a new line, or Escape to cancel.
 
-![Inline objective description editor](<./figures/objectives/field - Edit objective description.png>)
+![Inline objective description editor](<../figures/objectives/field - Edit objective description.png>)
 
 ## Classify objectives
 
@@ -66,24 +66,24 @@ Select the description to edit it inline; press Enter to save, Shift+Enter for a
 
 Select the type label in an objective row to open the available classifications.
 
-![Objective type button](<./figures/objectives/button - Objective type.png>)
+![Objective type button](<../figures/objectives/button - Objective type.png>)
 
 ### Choose an objective type
 
 Choose **Fundamental**, **Mean**, or **Strategic** from the type menu. For example, a team might classify creating value as Fundamental and learning before scaling as Mean. Discuss why each objective matters rather than treating the type label as a numerical weight.
 
-![Objective type menu](<./figures/objectives/menu - Objective type.png>)
+![Objective type menu](<../figures/objectives/menu - Objective type.png>)
 
 ## Arrange the list
 
 Use an objective's arrow controls to move it up or down in the list.
 
-![Move objective down button](<./figures/objectives/button - Move objective.png>)
+![Move objective down button](<../figures/objectives/button - Move objective.png>)
 
 ## Remove an objective
 
 Check the named objective before selecting **Delete**, or select **Cancel** to keep it.
 
-![Delete Objective confirmation dialog](<./figures/objectives/window - Delete Objective.png>)
+![Delete Objective confirmation dialog](<../figures/objectives/window - Delete Objective.png>)
 
-[Previous: Project information](./project_information.md) | [Workflow](./README.md) | [Next: Stakeholder matrix](./stakeholder_matrix.md)
+[Previous: Stakeholder matrix](./stakeholder_matrix.md) | [Workflow](../workflow.md) | [Next: Issues](./issues.md)

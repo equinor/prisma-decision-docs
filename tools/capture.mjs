@@ -121,12 +121,15 @@ try {
 		await mkdir(folder, { recursive: true });
 		// shot(name)                 full viewport
 		// shot(name, locator, {pad}) the element plus `pad` px of context around it
-		const shot = async (name, locator, { pad = 12 } = {}) => {
+		const shot = async (name, locator, { pad = 12, image } = {}) => {
 			const file = path.join(folder, `${name}.png`);
 			const descriptionFile = path.join(DOCS_DIR, 'workflow/figures', def.figureFolder ?? def.folder, `${name}.md`);
 			const description = await readFile(descriptionFile, 'utf8');
 			if (!description.trim()) throw new Error(`Empty figure description: ${descriptionFile}`);
-			if (locator) {
+			if (image) {
+				if (locator) throw new Error(`${def.folder}/${name}: provide either an image or a locator, not both`);
+				await writeFile(file, image);
+			} else if (locator) {
 				await locator.scrollIntoViewIfNeeded();
 				const box = await locator.boundingBox();
 				if (!box) throw new Error(`${def.folder}/${name}: element not visible`);

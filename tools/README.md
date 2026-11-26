@@ -77,6 +77,16 @@ function; see `homeSteps` for the pattern (locate elements by role/placeholder,
 leave the page as found). Element shots are taken from the live page, so the
 app's state (open popup, typed text, toggled favorite) is what gets captured.
 
+The project-information guide's sidebar comparison is composed automatically:
+the capture step records the collapsed and expanded sidebar, then
+[compose-sidebar-figure.mjs](./compose-sidebar-figure.mjs) combines them with a
+right-pointing gradient arrow. The sidebar is collapsed again before capture
+continues.
+
+Decision-tree capture expands one path only as far as a leaf, rather than the
+full tree. It also captures the scissors marker on a pruned branch and the
+envelope-shaped leaf marker with its result labels for the branch-end symbol guide.
+
 Every figure has an editable Markdown sidecar with the same basename, for example
 `issues/button - Create Issue.png` and `issues/button - Create Issue.md`.
 Create the sidecar in `workflow/figures/<page>/` before adding a new `shot()`.
@@ -105,8 +115,8 @@ The merger preserves the source fragments, adjusts heading levels, rebases image
 links for the page guides, and adds previous/next navigation. It fails on missing,
 duplicate, or unmerged figure fragments. It needs no running app or API.
 
-[`workflow/README.md`](../workflow/README.md) is the manually maintained process
-index. The detailed [decision-quality guidance](../workflow/decision_quality.md)
+[`workflow/workflow.md`](../workflow/workflow.md) is the manually maintained process
+index. The detailed [decision-quality guidance](../workflow/pages/decision_quality.md)
 is also maintained separately; the generated assessments guide links to it.
 
 Check figure/description pairs, generated guides, and their links:

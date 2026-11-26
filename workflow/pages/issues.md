@@ -2,7 +2,7 @@
 
 # Issues
 
-[Previous: Stakeholder matrix](./stakeholder_matrix.md) | [Workflow](./README.md) | [Next: Whiteboard](./whiteboard.md)
+[Previous: Objectives](./objectives.md) | [Workflow](../workflow.md) | [Next: Strategies](./strategies.md)
 
 Capture the decisions, uncertainties, and other issues raised by the team. Classify them and define the model boundary before structuring the influence diagram.
 
@@ -12,37 +12,37 @@ Capture the decisions, uncertainties, and other issues raised by the team. Class
 
 Select **Issues** in the sidebar to review the project's issue list or board.
 
-![Issues sidebar entry](<./figures/issues/button - Issues.png>)
+![Issues sidebar entry](<../figures/issues/button - Issues.png>)
 
 ### Identify and classify issues
 
 Use the issues page to record decisions, uncertainties, and utilities and decide which belong in the influence diagram.
 
-![Issues page](<./figures/issues/page - Issues.png>)
+![Issues page](<../figures/issues/page - Issues.png>)
 
 ## Create an issue
 
 Select **Create Issue** to open the form for adding an issue to the project.
 
-![Create Issue button](<./figures/issues/button - Create Issue.png>)
+![Create Issue button](<../figures/issues/button - Create Issue.png>)
 
 ### Describe a new issue
 
 Enter the issue's details and select its classification in the creation form.
 
-![Create Issue form](<./figures/issues/popup - Create Issue.png>)
+![Create Issue form](<../figures/issues/popup - Create Issue.png>)
 
 ### Review a new uncertainty
 
 The filled form illustrates a transport-related issue classified as **Uncertainty**; review the details before submitting.
 
-![Create Issue form with an uncertainty entered](<./figures/issues/popup - Create Issue filled.png>)
+![Create Issue form with an uncertainty entered](<../figures/issues/popup - Create Issue filled.png>)
 
 ### Add an issue inline
 
 Use the quick-create form above the list to enter a new issue without opening the full creation popup.
 
-![Quick-create issue form](<./figures/issues/field - Quick-create issue.png>)
+![Quick-create issue form](<../figures/issues/field - Quick-create issue.png>)
 
 ## Review classification and model inclusion
 
@@ -50,37 +50,37 @@ Use the quick-create form above the list to enter a new issue without opening th
 
 An issue row shows its text and classification, with controls for editing and deletion.
 
-![Issue row](<./figures/issues/card - Issue.png>)
+![Issue row](<../figures/issues/card - Issue.png>)
 
 ### Change an issue's type
 
 Select the issue type label to open its classification menu.
 
-![Issue type button](<./figures/issues/button - Issue type.png>)
+![Issue type button](<../figures/issues/button - Issue type.png>)
 
 ### Choose an issue type
 
 Choose **Decision** for something the team can choose, **Uncertainty** for something that can happen but cannot be directly chosen, **Fact** for settled information, **Utility** for a value measure, or **Unassigned** while sorting. Classifying an issue does not by itself supply the options, outcomes, or numerical inputs needed to solve the model.
 
-![Issue type menu](<./figures/issues/menu - Issue type.png>)
+![Issue type menu](<../figures/issues/menu - Issue type.png>)
 
 ### Set an issue's boundary
 
 Use the boundary menu to place the issue inside (**in**), on (**on**), or outside (**out**) the model boundary. Make scope choices deliberately: keeping an item outside the active model does not model its dependency or its effect on results.
 
-![Issue boundary menu](<./figures/issues/menu - Boundary.png>)
+![Issue boundary menu](<../figures/issues/menu - Boundary.png>)
 
 ### Understand which issues enter the diagram
 
 The information popup explains which issues enter the influence diagram: Focus decisions, Key uncertainties, and Utility issues with boundary **in** or **on**. If an issue is missing from the diagram, check these settings and its options or outcomes before creating a duplicate issue.
 
-![Explanation of issues used in the influence diagram](<./figures/issues/popup - About issues used in the influence diagram.png>)
+![Explanation of issues used in the influence diagram](<../figures/issues/popup - About issues used in the influence diagram.png>)
 
 ## Edit issue details
 
-Review the description, boundary, and type-specific details before saving. For a decision, add explicit options and choose **Focus** for the main choice, **Policy** for a choice already taken as given, or **Tactical** for a supporting choice. For an uncertainty, add explicit outcomes and review **Is Key**. A title alone does not provide the states required by the solver.
+Review the description, boundary, and type-specific details before saving. For a decision, add explicit options and choose **Focus** for the main choice, **Policy** for a choice already taken as given, or **Tactical** for a supporting choice. For an uncertainty, add explicit outcomes and review **Is Key**. A title alone does not provide the states required by the solver. The **Utility** field next to each option or outcome is a value contribution associated with that state, not its probability. For example, an option with a cost of 100 could have utility -100 if the model's values use the same monetary units. These state values contribute to calculated results in addition to values in Utility issue tables, so avoid counting the same effect twice. Leave a state utility at 0 when it has no separate value contribution; this does not mean an uncertainty outcome is impossible. Enter uncertainty probabilities separately in the uncertainty's **Probability Table** on the influence diagram. 
 
-![Edit Issue window](<./figures/issues/window - Edit Issue.png>)
+![Edit Issue window](<../figures/issues/window - Edit Issue.png>)
 
 ## Explore the list and board
 
@@ -88,36 +88,36 @@ Review the description, boundary, and type-specific details before saving. For a
 
 Select **List view** to display issues in tables with their descriptions and classifications.
 
-![List view button](<./figures/issues/button - List view.png>)
+![List view button](<../figures/issues/button - List view.png>)
 
 ### Switch to the issue board
 
 Select **Board view** to display issues as cards grouped on a board.
 
-![Board view button](<./figures/issues/button - Board view.png>)
+![Board view button](<../figures/issues/button - Board view.png>)
 
 ### Review issues on the board
 
 Use the board to explore issue cards and their grouping alongside the board focus and expansion controls.
 
-![Issues board view](<./figures/issues/page - Issues board view.png>)
+![Issues board view](<../figures/issues/page - Issues board view.png>)
 
 ### Choose the board focus
 
 Use **Board focus** to change how the issue board is organized.
 
-![Board focus selector](<./figures/issues/field - Board focus.png>)
+![Board focus selector](<../figures/issues/field - Board focus.png>)
 
 ### Expand issue cards
 
 Select **Expand All** on the issue board to reveal the cards' additional details.
 
-![Expand All button on the issue board](<./figures/issues/button - Expand All.png>)
+![Expand All button on the issue board](<../figures/issues/button - Expand All.png>)
 
 ## Remove an issue
 
 Check the issue named in the dialog before selecting **Delete**, or select **Cancel** to keep it.
 
-![Delete Issue confirmation dialog](<./figures/issues/window - Delete Issue.png>)
+![Delete Issue confirmation dialog](<../figures/issues/window - Delete Issue.png>)
 
-[Previous: Stakeholder matrix](./stakeholder_matrix.md) | [Workflow](./README.md) | [Next: Whiteboard](./whiteboard.md)
+[Previous: Objectives](./objectives.md) | [Workflow](../workflow.md) | [Next: Strategies](./strategies.md)

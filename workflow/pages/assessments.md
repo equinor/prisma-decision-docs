@@ -2,7 +2,7 @@
 
 # Assessments
 
-[Previous: Solution tree](./solution_tree.md) | [Workflow](./README.md)
+[Previous: Solution tree](./solution_tree.md) | [Workflow](../workflow.md)
 
 Assess the quality of the decision-making process, not the eventual outcome. See [Assess decision quality](./decision_quality.md) for the six elements, discussion prompts, and scoring guidance. Repeat assessments as the decision work progresses, not only at the end.
 
@@ -12,13 +12,13 @@ Assess the quality of the decision-making process, not the eventual outcome. See
 
 Select **Assessments** in the sidebar to score or review the quality of the decision-making process.
 
-![Assessments sidebar entry](<./figures/dq_assignment/button - evaluation.png>)
+![Assessments sidebar entry](<../figures/dq_assignment/button - evaluation.png>)
 
 ### Assess decision quality
 
 Use assessments to score the six elements of decision quality and review how the team's evaluations evolve over time.
 
-![Assessments page](<./figures/dq_assignment/page - Assessments.png>)
+![Assessments page](<../figures/dq_assignment/page - Assessments.png>)
 
 ## Start an assessment round
 
@@ -26,13 +26,13 @@ Use assessments to score the six elements of decision quality and review how the
 
 As the facilitator, select **Create Assessment** to start a new round of decision-quality evaluation.
 
-![Create Assessment button](<./figures/dq_assignment/button - Create Assessment.png>)
+![Create Assessment button](<../figures/dq_assignment/button - Create Assessment.png>)
 
 ### Name the assessment
 
 Enter a name identifying the evaluation round, then select **Add Assessment**.
 
-![Create Assessment popup](<./figures/dq_assignment/popup - Create Assessment.png>)
+![Create Assessment popup](<../figures/dq_assignment/popup - Create Assessment.png>)
 
 ## Score and submit your evaluation
 
@@ -40,17 +40,17 @@ Enter a name identifying the evaluation round, then select **Add Assessment**.
 
 A red dot beside **Assessments** indicates that an assessment is awaiting your submission.
 
-![Assessments sidebar entry with a pending evaluation indicator](<./figures/dq_assignment/button - Incomplete evaluation.png>)
+![Assessments sidebar entry with a pending evaluation indicator](<../figures/dq_assignment/button - Incomplete evaluation.png>)
 
 Score each of the six decision-quality elements from 0 to 5, optionally explain your assessment in a comment, then select **Submit Evaluation**.
 
-![Decision-quality evaluation form](<./figures/dq_assignment/window - Create Assessment.png>)
+![Decision-quality evaluation form](<../figures/dq_assignment/window - Create Assessment.png>)
 
 ## Review responses and complete the round
 
 Review the response count, group scores, and agreement indicators with the team. Low or inconsistent scores are prompts for discussion, not automatic changes to the decision model. When the round is ready to close, the facilitator selects **Mark as Complete**.
 
-![Submitted assessment with completion control](<./figures/dq_assignment/window - Complete assessment.png>)
+![Submitted assessment with completion control](<../figures/dq_assignment/window - Complete assessment.png>)
 
 ## Repeat and review progress
 
@@ -58,12 +58,12 @@ Review the response count, group scores, and agreement indicators with the team.
 
 A subsequent assessment shows score differences from the previous round alongside the current group scores and agreement indicators. Create a new round to review progress after further work rather than treating a completed round as an unfinished form.
 
-![Subsequent assessment with score changes](<./figures/dq_assignment/window - Complete assessment update.png>)
+![Subsequent assessment with score changes](<../figures/dq_assignment/window - Complete assessment update.png>)
 
 ### Review decision-quality trends
 
 Use the trend chart to follow changes in the six decision-quality elements across assessment rounds.
 
-![Decision-quality score trends over time](<./figures/dq_assignment/window - Time evolution.png>)
+![Decision-quality score trends over time](<../figures/dq_assignment/window - Time evolution.png>)
 
-[Previous: Solution tree](./solution_tree.md) | [Workflow](./README.md)
+[Previous: Solution tree](./solution_tree.md) | [Workflow](../workflow.md)

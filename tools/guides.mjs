@@ -2,8 +2,8 @@
 export const guides = [
 	{
 		page: 'home',
-		file: 'get_started.md',
-		title: 'Get started',
+		file: 'home_page.md',
+		title: 'Home page',
 		intro: 'Start a decision project or return to an existing one. You can create a project from scratch or import a saved Prisma export.',
 		sections: [
 			{ title: 'Overview', figures: ['page - Home'] },
@@ -27,7 +27,7 @@ export const guides = [
 		intro: 'Establish a shared decision context before developing the model. Record the opportunity, review the team, and manage the project settings.',
 		sections: [
 			{ title: 'Overview and navigation', figures: [
-				'button - Project Information', 'page - Project information',
+				'button - Project Information', 'page - Project information', 'pane - Side bar',
 			] },
 			{ title: 'Define the decision context', figures: [
 				'field - Project Name', 'field - Opportunity Statement', 'field - End date',
@@ -39,23 +39,6 @@ export const guides = [
 				'button - Download', 'button - Duplicate', 'window - Duplicate Project',
 			] },
 			{ title: 'Delete a project', figures: ['button - Delete', 'window - Delete Project'] },
-		],
-	},
-	{
-		page: 'objectives',
-		title: 'Objectives',
-		intro: 'Record what the decision should achieve before comparing alternatives. Add objectives, clarify their descriptions, and classify them as the team refines its understanding.',
-		sections: [
-			{ title: 'Overview and navigation', figures: ['button - Objectives', 'page - Objectives'] },
-			{ title: 'Add an objective', figures: [
-				'field - Create objective', 'field - Create objective filled', 'button - Create objective',
-			] },
-			{ title: 'Review and edit objectives', figures: [
-				'card - Objective', 'field - Edit objective name', 'field - Edit objective description',
-			] },
-			{ title: 'Classify objectives', figures: ['button - Objective type', 'menu - Objective type'] },
-			{ title: 'Arrange the list', figures: ['button - Move objective'] },
-			{ title: 'Remove an objective', figures: ['window - Delete Objective'] },
 		],
 	},
 	{
@@ -76,6 +59,23 @@ export const guides = [
 			{ title: 'Update stakeholder details', figures: ['window - Edit stakeholder'] },
 			{ title: 'Make room for the matrix', figures: ['page - Stakeholder matrix without list'] },
 			{ title: 'Remove a stakeholder', figures: ['window - Delete stakeholder'] },
+		],
+	},
+	{
+		page: 'objectives',
+		title: 'Objectives',
+		intro: 'Record what the decision should achieve before comparing alternatives. Add objectives, clarify their descriptions, and classify them as the team refines its understanding.',
+		sections: [
+			{ title: 'Overview and navigation', figures: ['button - Objectives', 'page - Objectives'] },
+			{ title: 'Add an objective', figures: [
+				'field - Create objective', 'field - Create objective filled', 'button - Create objective',
+			] },
+			{ title: 'Review and edit objectives', figures: [
+				'card - Objective', 'field - Edit objective name', 'field - Edit objective description',
+			] },
+			{ title: 'Classify objectives', figures: ['button - Objective type', 'menu - Objective type'] },
+			{ title: 'Arrange the list', figures: ['button - Move objective'] },
+			{ title: 'Remove an objective', figures: ['window - Delete Objective'] },
 		],
 	},
 	{
@@ -101,6 +101,21 @@ export const guides = [
 		],
 	},
 	{
+		page: 'strategies',
+		title: 'Strategies',
+		intro: 'Develop distinct courses of action by combining options across focus decisions. Review each strategy before comparing the selected combinations. See the [influence diagram](./influence_diagram.md) for model inputs.',
+		sections: [
+			{ title: 'Overview and navigation', figures: ['button - Strategies', 'page - Strategies'] },
+			{ title: 'Create a strategy', figures: [
+				'field - Create strategy', 'button - Strategy color', 'popup - Strategy icon',
+				'field - Create strategy filled', 'button - Create strategy',
+			] },
+			{ title: 'Review choices and edit the strategy', figures: ['card - Strategy table', 'window - Edit Strategy'] },
+			{ title: 'Compare strategies', figures: ['field - Add to compare'] },
+			{ title: 'Remove a strategy', figures: ['window - Delete Strategy'] },
+		],
+	},
+	{
 		page: 'whiteboard',
 		title: 'Whiteboard',
 		intro: 'Use the whiteboard to explore and organize issues with the team. Sheets provide separate spaces for different discussions or arrangements.',
@@ -112,51 +127,49 @@ export const guides = [
 		],
 	},
 	{
-		page: 'strategies',
-		title: 'Strategies',
-		intro: 'Develop distinct courses of action by combining options across focus decisions. Review each strategy before comparing the selected combinations.',
-		sections: [
-			{ title: 'Overview and navigation', figures: ['button - Strategies', 'page - Strategies'] },
-			{ title: 'Create a strategy', figures: [
-				'field - Create strategy', 'popup - Strategy icon',
-				'field - Create strategy filled', 'button - Create strategy',
-			] },
-			{ title: 'Review choices and edit the strategy', figures: ['card - Strategy', 'window - Edit Strategy'] },
-			{ title: 'Compare strategies', figures: ['field - Add to compare', 'card - Strategy table'] },
-			{ title: 'Remove a strategy', figures: ['window - Delete Strategy'] },
-		],
-	},
-	{
 		page: 'influence_diagram',
 		title: 'Influence diagram',
-		intro: 'Structure the decision model using decisions, uncertainties, utilities, and their relationships. Inspect model inputs before interpreting calculated results. See [Influence diagrams](../domain/influence_diagram.md) for arrow meanings, information timing, and input checks.',
+		intro: 'Structure the decision model using decisions, uncertainties, utilities, and their relationships. Inspect model inputs before interpreting calculated results. See [Influence diagrams](../../domain/influence_diagram.md) for arrow meanings, information timing, and input checks.',
 		sections: [
 			{ title: 'Overview and navigation', figures: ['button - Influence Diagram', 'page - Influence diagram'] },
 			{ title: 'Choose how to work with the diagram', figures: [
 				'menu - Influence diagram toolbar', 'field - Diagram view', 'field - Tool modes',
 			] },
 			{ title: 'Add an issue', figures: ['button - Create Issue', 'popup - Create Issue'] },
-			{ title: 'Inspect nodes and probability inputs', figures: [
-				'card - Issue node', 'menu - Issue actions', 'window - Probability Table',
+			{ title: 'Connect issues and manage restrictions', figures: [
+				'menu - Add arc', 'button - Arc actions', 'window - Restriction Table', 'window - Delete Arc',
+			] },
+			{ title: 'Inspect nodes and model inputs', figures: [
+				'card - Issue node', 'menu - Issue actions', 'window - Probability Table', 'window - Utility Table',
 			] },
 			{ title: 'Arrange the diagram', figures: ['button - Layout controls', 'popup - Layout controls'] },
 			{ title: 'Explore states and alternative views', figures: [
 				'button - Expand All', 'page - Influence diagram expanded', 'page - Influence diagram shape view',
 			] },
-			{ title: 'Review calculated results', figures: ['card - Expected value metrics'] },
+			{ title: 'Explore what-if scenarios', figures: ['page - What-if scenario'] },
+			{ title: 'Review calculated results', figures: ['card - Expected value metrics', 'window - Policy Table'] },
 		],
 	},
 	{
 		page: 'decision_tree',
 		title: 'Decision tree',
-		intro: 'Explore the model as sequences of decisions and uncertain outcomes. Start with the visible branches and expand them progressively to inspect the paths of interest. See [Decision trees](../domain/decision_tree.md) for interpreting branches, policies, and expected values.',
+		intro: 'Explore the model as sequences of decisions and uncertain outcomes. Expand only the branches needed to follow a path or check a calculation. See [Decision trees](../../domain/decision_tree.md) for interpreting branches, policies, and expected values.',
 		sections: [
 			{ title: 'Choose the tree view', figures: [
 				'button - Decision Tree', 'popup - Decision Tree', 'page - Decision tree',
 			] },
-			{ title: 'Navigate and expand branches', figures: [
+			{ title: 'Navigate, expand, and collapse branches', figures: [
 				'menu - Decision tree toolbar', 'button - Expand node', 'button - Expand All',
-				'page - Decision tree expanded',
+				'button - Collapse branch',
+			] },
+			{ title: 'Recognize branch-end symbols', figures: [
+				'card - Pruned branch', 'card - Leaf node',
+			] },
+			{ title: 'Select or clear a path', figures: [
+				'page - Decision tree selected path',
+			] },
+			{ title: 'Check branch values near a leaf', figures: [
+				'page - Decision tree leaf check',
 			] },
 			{ title: 'Review calculated results', figures: ['card - Expected value metrics'] },
 		],

@@ -2,7 +2,7 @@
 
 # Compact tree
 
-[Previous: Decision tree](./decision_tree.md) | [Workflow](./README.md) | [Next: Solution tree](./solution_tree.md)
+[Previous: Decision tree](./decision_tree.md) | [Workflow](../workflow.md) | [Next: Solution tree](./solution_tree.md)
 
 Choose **Compact** from the **Decision Tree** sidebar popup for a condensed representation of the model. Use it as an alternative view when reviewing the decision structure.
 
@@ -10,12 +10,12 @@ Choose **Compact** from the **Decision Tree** sidebar popup for a condensed repr
 
 Use the compact tree representation to inspect the decision model in a more condensed tree layout.
 
-![Compact tree page](<./figures/compact_tree/page - Compact tree.png>)
+![Compact tree page](<../figures/compact_tree/page - Compact tree.png>)
 
 ## Inspect a node
 
 Read a node's displayed details to understand its role in the compact tree.
 
-![Node in the compact tree](<./figures/compact_tree/card - Decision node.png>)
+![Node in the compact tree](<../figures/compact_tree/card - Decision node.png>)
 
-[Previous: Decision tree](./decision_tree.md) | [Workflow](./README.md) | [Next: Solution tree](./solution_tree.md)
+[Previous: Decision tree](./decision_tree.md) | [Workflow](../workflow.md) | [Next: Solution tree](./solution_tree.md)

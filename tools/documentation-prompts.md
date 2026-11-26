@@ -87,9 +87,9 @@ on future domain updates; check the scope of each future request.
 4. Update figure prose in its sidecar, and update page introductions, grouping,
    or ordering in [guides.mjs](./guides.mjs). Regenerate with
    `node tools/merge-guides.mjs`; do not edit generated page guides directly.
-5. Update the manually maintained [workflow index](../workflow/README.md),
-   [decision-quality guidance](../workflow/decision_quality.md), or
-   [troubleshooting](../troubleshooting/README.md) when relevant. Avoid changing
+5. Update the manually maintained [workflow index](../workflow/workflow.md),
+   [decision-quality guidance](../workflow/pages/decision_quality.md), or
+   [troubleshooting](../troubleshooting/troubleshooting.md) when relevant. Avoid changing
    unrelated domain content.
 6. Run `node --test tools/figure-descriptions.test.mjs tools/merge-guides.test.mjs`
    and `node tools/merge-guides.mjs --check`. Verify factual claims against

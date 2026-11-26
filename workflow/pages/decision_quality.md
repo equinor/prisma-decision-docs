@@ -1,4 +1,4 @@
-[Assessments page guide](./assessments.md) | [Workflow](./README.md)
+[Assessments page guide](./assessments.md) | [Workflow](../workflow.md)
 
 # Assess decision quality
 
@@ -8,7 +8,7 @@ Assess and document the quality of the decision-making process. The assessment i
 
 Decision quality has six elements. A serious weakness in any one element can limit the quality of the overall decision. Use the assessment to identify whether additional work on an element could change the recommended course of action.
 
-For definitions of the six elements, see [Decision quality](../domain/decision_quality.md).
+For definitions of the six elements, see [Decision quality](../../domain/decision_quality.md).
 
 ## How to conduct the assessment
 
@@ -185,7 +185,7 @@ Examples of trade-offs in industry projects include value versus safety, value v
 - Is the robustness of the decision understood?
 - Could reasonable people reach a different conclusion?
 
-Influence diagrams and decision trees can help make the reasoning clear. See [Influence diagrams](../domain/influence_diagram.md) and [Decision trees](../domain/decision_tree.md).
+Influence diagrams and decision trees can help make the reasoning clear. See [Influence diagrams](../../domain/influence_diagram.md) and [Decision trees](../../domain/decision_tree.md).
 
 **Discussion prompts:**
 - How did we arrive at this conclusion?
@@ -256,7 +256,7 @@ The assessment workflow described here is:
 Select **Assessments** in the menu bar.
 
    <p align="center">
-   <img src="./figures/dq_assignment/button - evaluation.png" alt="Assessments button in the menu bar." width="200">
+   <img src="../figures/dq_assignment/button - evaluation.png" alt="Assessments button in the menu bar." width="200">
    </p>
 
 
@@ -269,13 +269,13 @@ Select **Assessments** in the menu bar.
 
 
    <p align="center">
-   <img src="./figures/dq_assignment/button - Create Assessment.png" alt="Create Assessment button." width="200">
+   <img src="../figures/dq_assignment/button - Create Assessment.png" alt="Create Assessment button." width="200">
    </p>
 
 2. Enter a name and select **Add Assessment**.
 
    <p align="center">
-   <img src="./figures/dq_assignment/popup - Create Assessment.png" alt="Create Assessment dialog." width="500">
+   <img src="../figures/dq_assignment/popup - Create Assessment.png" alt="Create Assessment dialog." width="500">
    </p>
 
 
@@ -284,7 +284,7 @@ Select **Assessments** in the menu bar.
 For each element, enter a score from 0 to 5. Add comments to explain the score and any remaining concerns; comments are optional but recommended. When finished, submit the assessment (button on the lower right).
 
 <p align="center">
-<img src="./figures/dq_assignment/window - Create Assessment.png" alt="Decision quality assessment window." width="800">
+<img src="../figures/dq_assignment/window - Create Assessment.png" alt="Decision quality assessment window." width="800">
 </p>
 
 ### Complete and view the assessment
@@ -292,32 +292,32 @@ For each element, enter a score from 0 to 5. Add comments to explain the score a
 When assessments have been submitted but not completed, a red dot next to the assessment button in the menu bar appears
 
 <p align="center">
-<img src="./figures/dq_assignment/button - Incomplete evaluation.png" alt="Assessments button in the menu bar with indication of uncomplete assessments." width="200">
+<img src="../figures/dq_assignment/button - Incomplete evaluation.png" alt="Assessments button in the menu bar with indication of uncomplete assessments." width="200">
 </p>
 
 After assessments have been submitted, mark the assessment as complete
 
 <p align="center">
-<img src="./figures/dq_assignment/window - Complete assessment.png" alt="Submitted assessments (first assessment)." width="500">
+<img src="../figures/dq_assignment/window - Complete assessment.png" alt="Submitted assessments (first assessment)." width="500">
 </p>
 
 The window indicates the scores for each element and the teamm agreement for each of these scores. If the assessment is not the first one, the score difference is also shown
 
 <p align="center">
-<img src="./figures/dq_assignment/window - Complete assessment update.png" alt="Submitted assessments (subsequent assessment)." width="500">
+<img src="../figures/dq_assignment/window - Complete assessment update.png" alt="Submitted assessments (subsequent assessment)." width="500">
 </p>
 
 The evolution of scores across assessments is shown as a line plot
 
 <p align="center">
-<img src="./figures/dq_assignment/window - Time evolution.png" alt="Evolution of scores across assessments." width="800">
+<img src="../figures/dq_assignment/window - Time evolution.png" alt="Evolution of scores across assessments." width="800">
 </p>
 
 
 ## Related documentation
 
-- [Decision quality](../domain/decision_quality.md)
-- [Decision analysis](../domain/decision_analysis.md)
-- [Decision roles](../domain/decision_roles.md)
+- [Decision quality](../../domain/decision_quality.md)
+- [Decision analysis](../../domain/decision_analysis.md)
+- [Decision roles](../../domain/decision_roles.md)
 
-[Assessments page guide](./assessments.md) | [Workflow](./README.md)
+[Assessments page guide](./assessments.md) | [Workflow](../workflow.md)

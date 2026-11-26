@@ -2,9 +2,9 @@
 
 # Whiteboard
 
-[Previous: Issues](./issues.md) | [Workflow](./README.md) | [Next: Strategies](./strategies.md)
+[Previous: Strategies](./strategies.md) | [Workflow](../workflow.md) | [Next: Influence diagram](./influence_diagram.md)
 
-Use the whiteboard to explore and organize issues with the team. Sheets provide separate spaces for different discussions or arrangements.
+Use the whiteboard to draft ideas or explore and organize issues with the team. Sheets provide separate spaces for different discussions or arrangements.
 
 ## Overview and navigation
 
@@ -12,13 +12,13 @@ Use the whiteboard to explore and organize issues with the team. Sheets provide 
 
 Select **Whiteboard** in the sidebar to work with the project's whiteboard sheets.
 
-![Whiteboard sidebar entry](<./figures/whiteboard/button - Whiteboard.png>)
+![Whiteboard sidebar entry](<../figures/whiteboard/button - Whiteboard.png>)
 
 ### Explore issues on the whiteboard
 
 Use the whiteboard to arrange issues spatially and support discussion before or alongside formal model structuring.
 
-![Whiteboard page](<./figures/whiteboard/page - Whiteboard.png>)
+![Whiteboard page](<../figures/whiteboard/page - Whiteboard.png>)
 
 ## Navigate and choose tools
 
@@ -26,13 +26,13 @@ Use the whiteboard to arrange issues spatially and support discussion before or 
 
 Use the toolbar to pan, select objects, add issue cards, and draw text, rectangles, arrows, or freehand annotations. Keep explanatory notes near the relevant issues. A whiteboard arrow is an annotation, not an influence-diagram dependency; transfer agreed model relationships to the influence diagram explicitly.
 
-![Whiteboard toolbar](<./figures/whiteboard/menu - Whiteboard toolbar.png>)
+![Whiteboard toolbar](<../figures/whiteboard/menu - Whiteboard toolbar.png>)
 
 ### Choose a whiteboard tool
 
 Select a tool mode to switch how you interact with the whiteboard canvas.
 
-![Whiteboard tool mode selector](<./figures/whiteboard/field - Tool modes.png>)
+![Whiteboard tool mode selector](<../figures/whiteboard/field - Tool modes.png>)
 
 ## Choose or create a sheet
 
@@ -40,13 +40,13 @@ Select a tool mode to switch how you interact with the whiteboard canvas.
 
 Select the current sheet's button to open the sheet menu.
 
-![Whiteboard sheet selector](<./figures/whiteboard/button - Sheet.png>)
+![Whiteboard sheet selector](<../figures/whiteboard/button - Sheet.png>)
 
 ### Manage whiteboard sheets
 
 Use the sheet menu to switch between sheets or create another sheet for the project.
 
-![Whiteboard sheet menu](<./figures/whiteboard/menu - Sheet.png>)
+![Whiteboard sheet menu](<../figures/whiteboard/menu - Sheet.png>)
 
 ## Place issues on the sheet
 
@@ -54,12 +54,12 @@ Use the sheet menu to switch between sheets or create another sheet for the proj
 
 Select **Add Issue** to open the issue controls for the whiteboard.
 
-![Add Issue button on the whiteboard](<./figures/whiteboard/button - Add Issue.png>)
+![Add Issue button on the whiteboard](<../figures/whiteboard/button - Add Issue.png>)
 
 ### Choose an issue for the whiteboard
 
 Use the **Add Issue** popup to choose an issue to place on the current sheet. Issue cards refer to shared project issues, not independent sticky notes. Check which object an edit or delete action affects before changing it.
 
-![Add Issue popup on the whiteboard](<./figures/whiteboard/popup - Add Issue.png>)
+![Add Issue popup on the whiteboard](<../figures/whiteboard/popup - Add Issue.png>)
 
-[Previous: Issues](./issues.md) | [Workflow](./README.md) | [Next: Strategies](./strategies.md)
+[Previous: Strategies](./strategies.md) | [Workflow](../workflow.md) | [Next: Influence diagram](./influence_diagram.md)

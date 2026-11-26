@@ -16,8 +16,8 @@ test('every figure has a reusable Markdown description and a matching image link
 			const sidecar = file.replace(/\.png$/, '.md');
 			assert.ok(files.includes(sidecar), `Missing description: ${entry.name}/${sidecar}`);
 			const content = await readFile(path.join(folder, sidecar), 'utf8');
-			assert.match(content, /^## .+\n\n[^#!\s].+\n\n!\[[^\]]+\]\(<\.\/.+\.png>\)\n$/);
-			assert.ok(content.endsWith(`](<./${file}>)\n`), `Wrong image link: ${entry.name}/${sidecar}`);
+			assert.match(content, /^## .+\n\n(?:[^#!\s][^\n]*(?:\n[^#!\s][^\n]*)*\n\n)+!\[[^\]]+\]\(<\.\/.+\.png>\)\n(?:\n(?:> .+\n)+)?$/);
+			assert.ok(content.includes(`](<./${file}>)\n`), `Wrong image link: ${entry.name}/${sidecar}`);
 			figures++;
 		}
 		for (const file of files.filter(file => file.endsWith('.md'))) {

@@ -26,4 +26,4 @@ possible. Do not send passwords, access tokens, or sensitive project exports.
 Wait for pending actions to finish before retrying. Repeated clicks do not
 correct invalid inputs and can make it harder to determine what was submitted.
 
-Return to the [workflow guides](../workflow/README.md).
+Return to the [workflow guides](../workflow/workflow.md).

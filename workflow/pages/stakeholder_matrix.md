@@ -2,7 +2,7 @@
 
 # Stakeholder matrix
 
-[Previous: Objectives](./objectives.md) | [Workflow](./README.md) | [Next: Issues](./issues.md)
+[Previous: Project information](./project_information.md) | [Workflow](../workflow.md) | [Next: Objectives](./objectives.md)
 
 Identify the people and groups involved in the decision. Discuss their influence and how the decision affects them, then use the matrix to support stakeholder engagement.
 
@@ -12,25 +12,26 @@ Identify the people and groups involved in the decision. Discuss their influence
 
 Select **Stakeholder Matrix** in the sidebar to review the stakeholder map and list.
 
-![Stakeholder Matrix sidebar entry](<./figures/stakeholder_matrix/button - Stakeholder Matrix.png>)
+![Stakeholder Matrix sidebar entry](<../figures/stakeholder_matrix/button - Stakeholder Matrix.png>)
 
 ### Map stakeholders
 
 Use the stakeholder matrix to discuss how strongly each stakeholder affects the decision and is affected by it. The horizontal axis is **Affecting the decision** and the vertical axis is **Affected by the decision**, each from low (0) to high (1). Positions support a discussion about engagement; they are not objective weights or calculated financial values.
 
-![Stakeholder matrix page](<./figures/stakeholder_matrix/page - Stakeholder matrix.png>)
+![Stakeholder matrix page](<../figures/stakeholder_matrix/page - Stakeholder matrix.png>)
 
 ### Get help with the matrix
 
 Hover over the information button to see a short explanation of the matrix axes.
 
-![Stakeholder matrix information button](<./figures/stakeholder_matrix/button - About this view.png>)
+![Stakeholder matrix information button](<../figures/stakeholder_matrix/button - About this view.png>)
+
+![Stakeholder matrix explanation tooltip](<../figures/stakeholder_matrix/popup - About this view.png>)
+
 
 ### Interpret the matrix axes
 
-The tooltip explains the two axes. The matrix groups stakeholders as **Partner closely** (high on both axes), **Consult** (highly affected, less influence), **Keep informed** (high influence, less affected), or **Observe** (low on both). Use these groups as prompts for discussing engagement, not as a substitute for understanding a stakeholder's role.
-
-![Stakeholder matrix explanation tooltip](<./figures/stakeholder_matrix/popup - About this view.png>)
+The matrix groups stakeholders as **Partner closely** (high on both axes), **Consult** (highly affected, less influence), **Keep informed** (high influence, less affected), or **Observe** (low on both). Use these groups as prompts for discussing engagement, not as a substitute for understanding a stakeholder's role.
 
 ## Add stakeholders
 
@@ -38,19 +39,19 @@ The tooltip explains the two axes. The matrix groups stakeholders as **Partner c
 
 Select **Add** in the stakeholder panel to open the stakeholder creation form.
 
-![Add stakeholder button](<./figures/stakeholder_matrix/button - Add.png>)
+![Add stakeholder button](<../figures/stakeholder_matrix/button - Add.png>)
 
 ### Describe a stakeholder
 
 Enter the stakeholder's name and role; new stakeholders start in the middle of the matrix and can be dragged into place.
 
-![Add stakeholder form](<./figures/stakeholder_matrix/popup - Add stakeholder.png>)
+![Add stakeholder form](<../figures/stakeholder_matrix/popup - Add stakeholder.png>)
 
 ### Review stakeholder details
 
 The filled form illustrates a works council representing employees; review the name and role before adding it.
 
-![Add stakeholder form with example values](<./figures/stakeholder_matrix/popup - Add stakeholder filled.png>)
+![Add stakeholder form with example values](<../figures/stakeholder_matrix/popup - Add stakeholder filled.png>)
 
 ## Find and position stakeholders
 
@@ -58,36 +59,36 @@ The filled form illustrates a works council representing employees; review the n
 
 The stakeholder panel groups stakeholders and provides search, addition, editing, and deletion controls.
 
-![Stakeholders list panel](<./figures/stakeholder_matrix/card - Stakeholders.png>)
+![Stakeholders list panel](<../figures/stakeholder_matrix/card - Stakeholders.png>)
 
 ### Search stakeholders
 
 Enter a stakeholder name or role to filter the stakeholder list.
 
-![Search stakeholders field](<./figures/stakeholder_matrix/field - Search stakeholders.png>)
+![Search stakeholders field](<../figures/stakeholder_matrix/field - Search stakeholders.png>)
 
 ### Position a stakeholder
 
 Drag a stakeholder card in the matrix to reflect how much they affect the decision and how much the decision affects them.
 
-![Stakeholder card on the matrix](<./figures/stakeholder_matrix/card - Stakeholder.png>)
+![Stakeholder card on the matrix](<../figures/stakeholder_matrix/card - Stakeholder.png>)
 
 ## Update stakeholder details
 
 Update the stakeholder's name or role in the edit dialog, then select **Save**. To change their position, drag the card on the matrix; the current edit dialog changes details, not the axis values.
 
-![Edit stakeholder dialog](<./figures/stakeholder_matrix/window - Edit stakeholder.png>)
+![Edit stakeholder dialog](<../figures/stakeholder_matrix/window - Edit stakeholder.png>)
 
 ## Make room for the matrix
 
 Hide the stakeholder list to enlarge the matrix; use **Show stakeholder list** to restore the panel.
 
-![Stakeholder matrix with its list hidden](<./figures/stakeholder_matrix/page - Stakeholder matrix without list.png>)
+![Stakeholder matrix with its list hidden](<../figures/stakeholder_matrix/page - Stakeholder matrix without list.png>)
 
 ## Remove a stakeholder
 
 Check the stakeholder named in the dialog before selecting **Delete**, or select **Cancel** to keep the entry.
 
-![Delete stakeholder confirmation dialog](<./figures/stakeholder_matrix/window - Delete stakeholder.png>)
+![Delete stakeholder confirmation dialog](<../figures/stakeholder_matrix/window - Delete stakeholder.png>)
 
-[Previous: Objectives](./objectives.md) | [Workflow](./README.md) | [Next: Issues](./issues.md)
+[Previous: Project information](./project_information.md) | [Workflow](../workflow.md) | [Next: Objectives](./objectives.md)

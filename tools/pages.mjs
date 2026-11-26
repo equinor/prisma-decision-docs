@@ -5,9 +5,10 @@
 // `steps` is optional: an async function capturing how-to details (buttons,
 // popups, dialogs) on top of the "page - <title>" overview. It receives:
 //   page          Playwright page, already on the route with data loaded
-//   shot(name, locator?, { pad })
+//   shot(name, locator?, { pad, image })
 //                 saves "<folder>/<name>.png"; whole viewport without a locator,
 //                 otherwise the element plus `pad` px of context (default 12)
+//                 or a precomposed PNG supplied as `image`
 //   projectId     id of the imported project
 //   projectFile   path of the imported project export (JSON)
 //   api(method, route, body)
@@ -18,6 +19,8 @@
 // page, button, popup, window, card, field, menu.
 // Each shot needs a matching Markdown description in workflow/figures/<folder>/.
 // Steps should leave the page (and the project data) as they found it.
+
+import { composeSidebarFigure } from './compose-sidebar-figure.mjs';
 
 // EDS Popover renders in a portal; the open one is the last StyledPopover.
 const popover = page => page.locator('[class*="Popover__StyledPopover"]').last();
@@ -36,6 +39,24 @@ const escape = async page => {
 };
 // Hover-free mouse position so no tooltip or hover style leaks into a shot.
 const park = page => page.mouse.move(0, 0);
+
+const captureSidebar = async (page, toggle) => {
+	const clip = await toggle.evaluate(button => {
+		for (let element = button; element instanceof HTMLElement; element = element.parentElement) {
+			const { x, y, width, height } = element.getBoundingClientRect();
+			if (x <= 2 && x >= -2 && width < window.innerWidth * 0.4 && height > window.innerHeight * 0.75) {
+				return { x, y, width, height };
+			}
+		}
+		return null;
+	});
+	if (!clip) throw new Error('Could not locate the sidebar for the navigation comparison figure');
+	return {
+		image: await page.screenshot({ animations: 'disabled', clip }),
+		width: Math.round(clip.width),
+		height: Math.round(clip.height),
+	};
+};
 
 // Captures a sidebar entry with its label visible (sidebar expanded), then
 // collapses the sidebar again.
@@ -102,6 +123,38 @@ const homeSteps = async ({ page, shot, projectFile }) => {
 const projectInformationSteps = async ctx => {
 	const { page, shot } = ctx;
 	await shotSidebarLink(ctx, 'button - Project Information', '');
+
+	const expandSidebar = page.getByRole('button', { name: 'Expand', exact: true });
+	await page.evaluate(() => {
+		if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+	});
+	await park(page);
+	await settle(page);
+	const collapsedSidebar = await captureSidebar(page, expandSidebar);
+	await expandSidebar.click();
+	let expandedSidebar;
+	try {
+		const collapseSidebar = page.getByRole('button', { name: 'Collapse', exact: true });
+		await collapseSidebar.waitFor();
+		await settle(page);
+		await page.evaluate(() => {
+			if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+		});
+		await park(page);
+		expandedSidebar = await captureSidebar(page, collapseSidebar);
+	} finally {
+		const collapseSidebar = page.getByRole('button', { name: 'Collapse', exact: true });
+		if (await collapseSidebar.count()) {
+			await collapseSidebar.click();
+			await settle(page);
+		}
+		await page.evaluate(() => {
+			if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+		});
+		await park(page);
+	}
+	const sidebarFigure = await composeSidebarFigure(page, collapsedSidebar, expandedSidebar);
+	await shot('pane - Side bar', undefined, { image: sidebarFigure });
 
 	const download = page.getByRole('button', { name: 'Download' });
 	const duplicate = page.getByRole('button', { name: 'Duplicate' });
@@ -257,13 +310,14 @@ const strategiesSteps = async ctx => {
 
 	await shot(
 		'card - Strategy table',
-		page.getByRole('heading', { name: 'Strategy Table' }).locator('..').locator('..'),
+		page.getByRole('heading', { name: 'Strategy Table' }).locator('..').locator('..').locator('..'),
 	);
 
 	const form = page.getByRole('form', { name: 'Create strategy' });
 	const name = form.getByRole('textbox', { name: 'Strategy name' });
 	const rationale = form.getByRole('textbox', { name: 'Rationale' });
 	await shot('field - Create strategy', form);
+	await shot('button - Strategy color', form.getByLabel('Choose strategy icon color').locator('..'));
 	await name.fill('Survey first');
 	await rationale.fill('Ask employees before committing to an event.');
 	await shot('field - Create strategy filled', form);
@@ -272,14 +326,14 @@ const strategiesSteps = async ctx => {
 	await iconButton.click();
 	await settle(page);
 	await shot('popup - Strategy icon', popover(page));
-	await escape(page);
+	await iconButton.click();
+	await popover(page).waitFor({ state: 'hidden' });
 	await name.fill('');
 	await rationale.fill('');
 
 	// One strategy: header with compare toggle, edit and delete, option cards
 	const compare = page.getByRole('checkbox', { name: 'Add to compare' }).first();
 	const strategy = compare.locator('xpath=ancestor::div[contains(@class,"flex-col")][1]');
-	await shot('card - Strategy', strategy);
 	await shot('field - Add to compare', compare.locator('..'));
 	const [edit, remove] = await strategy.locator(':scope > div').first().getByRole('button').all();
 	await edit.click();
@@ -370,12 +424,31 @@ const whiteboardSteps = async ctx => {
 // --------------------------------------------------------- influence diagram
 
 const influenceDiagramSteps = async ctx => {
-	const { page, shot, fitCanvas } = ctx;
+	const { page, shot, fitCanvas, api, waitForApiIdle } = ctx;
 	await shotSidebarLink(ctx, 'button - Influence Diagram', 'influence-diagram');
 
 	const toolbar = page.getByRole('toolbar', { name: 'Influence diagram toolbar' })
 		.or(page.locator('[aria-label="Influence diagram toolbar"]'))
 		.first();
+	const focusNode = async node => {
+		const viewport = page.viewportSize();
+		const box = await node.boundingBox();
+		if (!viewport || !box) throw new Error('Influence diagram: cannot focus example node');
+		await page.mouse.move(90, viewport.height / 2);
+		await page.mouse.down();
+		await page.mouse.move(
+			90 + viewport.width * 0.35 - (box.x + box.width / 2),
+			viewport.height / 2 + viewport.height * 0.42 - (box.y + box.height / 2),
+			{ steps: 10 },
+		);
+		await page.mouse.up();
+		await settle(page);
+		const centered = await node.boundingBox();
+		if (!centered) throw new Error('Influence diagram: focused node is not visible');
+		await page.mouse.move(centered.x + centered.width / 2, centered.y + centered.height / 2);
+		await page.mouse.wheel(0, -450);
+		await settle(page, 800);
+	};
 	await shot('menu - Influence diagram toolbar', toolbar);
 	await shot('field - Diagram view', page.getByRole('radiogroup', { name: 'Diagram view' }), { pad: 8 });
 	await shot('field - Tool modes', page.getByRole('radiogroup', { name: 'Tool modes' }), { pad: 8 });
@@ -407,10 +480,21 @@ const influenceDiagramSteps = async ctx => {
 	const table = page.getByRole('heading', { name: 'Weather Probability Table' })
 		.locator('xpath=ancestor::div[contains(@class,"border-2")][1]');
 	await shot('window - Probability Table', table);
-	await escape(page);
-	await actions.click();
-	await settle(page);
-	await escape(page);
+	await table.getByRole('button').last().click();
+
+	const utilityNode = page.locator('.react-flow__node').filter({
+		has: page.getByRole('heading', { name: 'Success', exact: true }),
+	});
+	await focusNode(utilityNode);
+	await utilityNode.getByRole('button', { name: 'Issue actions' }).click();
+	await menu(page).getByRole('menuitem', { name: 'Utility Table' }).click();
+	const utilityTable = page.getByRole('heading', { name: 'Success Utility Table' })
+		.locator('xpath=../..');
+	await utilityTable.getByRole('spinbutton').nth(8).waitFor();
+	await settle(page, 400);
+	await shot('window - Utility Table', utilityTable);
+	await utilityTable.getByRole('button').last().click();
+	await fitCanvas();
 
 	// Expand All opens every card's states; Collapse All reverts
 	const expandAll = page.getByRole('button', { name: 'Expand All' });
@@ -419,6 +503,52 @@ const influenceDiagramSteps = async ctx => {
 	await settle(page, 800);
 	await fitCanvas();
 	await shot('page - Influence diagram expanded');
+
+	const decision = page.locator('.react-flow__node').filter({
+		has: page.getByRole('heading', { name: 'Event selection', exact: true }),
+	});
+	const option = decision.locator('li').filter({ hasText: 'Outdoor activiy' });
+	const weather = node.locator('li').filter({ hasText: 'Good' });
+	await option.click();
+	await weather.click();
+	await waitForApiIdle();
+	await page.waitForFunction(() => {
+		const metrics = document.querySelector('[aria-label="Expected value metrics"]');
+		return /Scenario EV\s*-?\d/.test(metrics?.textContent ?? '');
+	});
+	await settle(page, 800);
+	await focusNode(decision);
+	const decisionBox = await decision.boundingBox();
+	const weatherBox = await node.boundingBox();
+	const scenarioViewport = page.viewportSize();
+	if (!decisionBox || !weatherBox || !scenarioViewport) {
+		throw new Error('Influence diagram: scenario nodes are not visible');
+	}
+	const top = Math.min(decisionBox.y, weatherBox.y);
+	const bottom = Math.max(decisionBox.y + decisionBox.height, weatherBox.y + weatherBox.height);
+	if (bottom - top > scenarioViewport.height - 200) {
+		throw new Error('Influence diagram: scenario nodes do not fit in the viewport');
+	}
+	await page.mouse.move(90, scenarioViewport.height - 100);
+	await page.mouse.down();
+	await page.mouse.move(90, scenarioViewport.height - 100 + scenarioViewport.height * 0.52 - (top + bottom) / 2, { steps: 10 });
+	await page.mouse.up();
+	await park(page);
+	await settle(page);
+	await shot('page - What-if scenario');
+	await option.click();
+	await weather.click();
+	await waitForApiIdle();
+	await fitCanvas();
+	await focusNode(decision);
+	await decision.getByRole('button', { name: 'Issue actions' }).click();
+	await menu(page).getByRole('menuitem', { name: 'Policy Table' }).click();
+	const policyTable = page.getByRole('heading', { name: 'Event selection Policy Table' })
+		.locator('xpath=../..');
+	await policyTable.waitFor({ state: 'visible' });
+	await shot('window - Policy Table', policyTable);
+	await policyTable.getByRole('button').last().click();
+
 	await page.getByRole('button', { name: 'Collapse All' }).click();
 	await settle(page, 800);
 	await fitCanvas();
@@ -428,6 +558,73 @@ const influenceDiagramSteps = async ctx => {
 	await settle(page, 800);
 	await fitCanvas();
 	await shot('page - Influence diagram shape view');
+
+	const source = page.locator('.react-flow__node').filter({ hasText: 'Information strategy' }).first();
+	const target = page.locator('.react-flow__node').filter({ hasText: 'Pilot accuracy' }).first();
+	const sourceId = await source.getAttribute('data-id');
+	const targetId = await target.getAttribute('data-id');
+	if (!sourceId || !targetId) throw new Error('Influence diagram: example arc nodes are missing');
+	const edge = page.getByRole('group', { name: `Edge from ${sourceId} to ${targetId}` });
+	const edgeId = await edge.getAttribute('data-id');
+	const restrictions = await api('GET', '/restriction_tables');
+	if (!edgeId || !restrictions.some(table => table.edge_id === edgeId)) {
+		throw new Error('Influence diagram: example arc has no existing restriction table');
+	}
+
+	const edgePoint = () => edge.locator('.react-flow__edge-path').evaluate(path => {
+		const point = path.getPointAtLength(path.getTotalLength() / 2);
+		const screen = new DOMPoint(point.x, point.y).matrixTransform(path.getScreenCTM());
+		return { x: screen.x, y: screen.y };
+	});
+	const viewport = page.viewportSize();
+	if (!viewport) throw new Error('Influence diagram: viewport size is unavailable');
+	const pan = async (dx, dy) => {
+		const start = {
+			x: Math.max(30, Math.min(viewport.width - 30, viewport.width / 2 - dx / 2)),
+			y: Math.max(160, Math.min(viewport.height - 70, viewport.height / 2 - dy / 2)),
+		};
+		await page.mouse.move(start.x, start.y);
+		await page.mouse.down();
+		await page.mouse.move(start.x + dx, start.y + dy, { steps: 10 });
+		await page.mouse.up();
+		await settle(page);
+	};
+	const sourceBox = await source.boundingBox();
+	if (!sourceBox) throw new Error('Influence diagram: example source is not visible');
+	await pan(
+		viewport.width * 0.35 - (sourceBox.x + sourceBox.width / 2),
+		viewport.height * 0.3 - (sourceBox.y + sourceBox.height / 2),
+	);
+	const centeredSource = await source.boundingBox();
+	if (!centeredSource) throw new Error('Influence diagram: example source is not visible after panning');
+	await page.mouse.move(centeredSource.x + centeredSource.width / 2, centeredSource.y + centeredSource.height / 2 + 80);
+	await page.mouse.wheel(0, -570);
+	await settle(page, 800);
+
+	await source.hover();
+	await source.getByRole('button', { name: 'Add arc' }).click();
+	await shot('menu - Add arc', page.getByRole('menu', { name: 'Add arc to' }), { pad: 320 });
+	await escape(page);
+	await page.evaluate(() => {
+		if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+	});
+
+	const beforePan = await edgePoint();
+	await pan(viewport.width * 0.5 - beforePan.x, viewport.height * 0.3 - beforePan.y);
+	const zoomed = await edgePoint();
+	await page.mouse.move(zoomed.x, zoomed.y);
+	const arcActions = page.locator('.react-flow__edgelabel-renderer button').last();
+	await arcActions.waitFor({ state: 'visible' });
+	await shot('button - Arc actions', arcActions, { pad: 320 });
+	await arcActions.click();
+	const restrictionTable = page.getByText('Information strategy to Pilot accuracy Restriction Table', { exact: true })
+		.locator('xpath=ancestor::div[contains(@class,"border-2")][1]');
+	await shot('window - Restriction Table', restrictionTable);
+	await restrictionTable.getByRole('button', { name: 'Delete edge' }).click();
+	await shot('window - Delete Arc', dialog(page).locator(':scope > div').first());
+	await dialog(page).getByRole('button', { name: 'Cancel' }).click();
+	await restrictionTable.getByRole('button').last().click();
+
 	await page.getByRole('radio', { name: 'Card view' }).check();
 	await settle(page, 800);
 	await fitCanvas();
@@ -435,7 +632,7 @@ const influenceDiagramSteps = async ctx => {
 
 // ------------------------------------------------------------- decision tree
 
-const decisionTreeSteps = async ({ page, shot, fitCanvas }) => {
+const decisionTreeSteps = async ({ page, shot, fitCanvas, waitForApiIdle }) => {
 	// The sidebar entry opens a popup with the three tree views
 	await page.getByRole('button', { name: 'Expand', exact: true }).click();
 	await settle(page);
@@ -452,15 +649,95 @@ const decisionTreeSteps = async ({ page, shot, fitCanvas }) => {
 	await shot('menu - Decision tree toolbar', toolbar);
 	await shot('card - Expected value metrics', page.locator('[aria-label="Expected value metrics"]'), { pad: 8 });
 
-	// Each "+" node expands one branch; Expand All expands all visible ones
-	const expandNode = page.locator('.react-flow__node-expandNode').first();
-	await shot('button - Expand node', expandNode, { pad: 8 });
+	// Expand nodes are 1px wide; capture the visible button, not its wrapper.
+	// Each "+" button expands one branch; Expand All expands all visible ones.
+	const expandNode = page.locator('.react-flow__node-expandNode').first().getByRole('button');
+	await shot('button - Expand node', expandNode, { pad: 220 });
 	const expandAll = page.getByRole('button', { name: 'Expand All' });
 	await shot('button - Expand All', expandAll, { pad: 8 });
-	await expandAll.click();
-	await settle(page, 1500);
+
+	await expandNode.click();
+	await waitForApiIdle();
+	await settle(page, 1200);
+	const collapseBranch = page.locator('.react-flow__edgelabel-renderer button').first();
+	await collapseBranch.waitFor({ state: 'visible' });
+	await shot('button - Collapse branch', collapseBranch, { pad: 180 });
+	await collapseBranch.click();
+	await settle(page, 1000);
+
+	const firstExpansion = page.locator('.react-flow__node-expandNode').first().getByRole('button');
+	await firstExpansion.click();
+	await waitForApiIdle();
+	await settle(page, 1200);
+	const treeNodes = page.locator('.react-flow__node-treeNode');
+	if (await treeNodes.count() < 2) throw new Error('Decision tree: expected an expanded child node');
+	await treeNodes.nth(1).click();
 	await fitCanvas();
-	await shot('page - Decision tree expanded');
+	await shot('page - Decision tree selected path');
+	await treeNodes.first().click();
+	const prunedBranch = page.getByRole('button', { name: 'Pruned branch', exact: true }).first();
+	await prunedBranch.waitFor({ state: 'visible' });
+	await park(page);
+	await shot('card - Pruned branch', prunedBranch, { pad: 65 });
+
+	const expandableNodes = page.locator('.react-flow__node-expandNode');
+	let leafCount = await page.locator('.react-flow__node-outputNode').count();
+	for (let depth = 0; depth < 8 && leafCount === 0; depth++) {
+		const treeNodeIds = await treeNodes.evaluateAll(nodes =>
+			nodes.map(node => node.getAttribute('data-id')).filter(Boolean),
+		);
+		const expandableIds = await expandableNodes.evaluateAll(nodes =>
+			nodes.map(node => node.getAttribute('data-id') ?? ''),
+		);
+		let nextExpansionIndex = -1;
+		for (const treeNodeId of treeNodeIds.toReversed()) {
+			nextExpansionIndex = expandableIds.findIndex(id => id.startsWith(`expand:${treeNodeId}:`));
+			if (nextExpansionIndex >= 0) break;
+		}
+		if (nextExpansionIndex < 0) break;
+		await expandableNodes.nth(nextExpansionIndex).getByRole('button').click();
+		await waitForApiIdle();
+		await settle(page, 1200);
+		leafCount = await page.locator('.react-flow__node-outputNode').count();
+	}
+	if (leafCount === 0) throw new Error('Decision tree: could not reach a leaf for the calculation-check figure');
+	await fitCanvas();
+	const leaf = page.locator('.react-flow__node-outputNode').first();
+	await leaf.waitFor({ state: 'visible' });
+	const viewport = page.viewportSize();
+	const leafBox = await leaf.boundingBox();
+	if (!viewport || !leafBox) throw new Error('Decision tree: leaf is not visible for the calculation-check figure');
+	const nodeBoxes = await page.locator('.react-flow__node').evaluateAll(nodes =>
+		nodes.map(node => {
+			const { x, y, width, height } = node.getBoundingClientRect();
+			return { x, y, width, height };
+		}),
+	);
+	const start = [
+		{ x: viewport.width * 0.72, y: viewport.height * 0.78 },
+		{ x: viewport.width * 0.86, y: viewport.height * 0.76 },
+		{ x: viewport.width * 0.55, y: viewport.height * 0.8 },
+	].find(point => nodeBoxes.every(box =>
+		point.x < box.x - 12 || point.x > box.x + box.width + 12 ||
+		point.y < box.y - 12 || point.y > box.y + box.height + 12,
+	));
+	if (!start) throw new Error('Decision tree: no clear canvas area to focus the leaf figure');
+	const dx = viewport.width * 0.55 - (leafBox.x + leafBox.width / 2);
+	const dy = viewport.height * 0.5 - (leafBox.y + leafBox.height / 2);
+	await page.mouse.move(start.x, start.y);
+	await page.mouse.down();
+	await page.mouse.move(start.x + dx, start.y + dy, { steps: 10 });
+	await page.mouse.up();
+	await park(page);
+	const zoomIn = page.getByRole('button', { name: 'Zoom in' });
+	await zoomIn.click();
+	await zoomIn.click();
+	await zoomIn.click();
+	await zoomIn.click();
+	await settle(page);
+	await shot('page - Decision tree leaf check', leaf, { pad: 260 });
+	// The output-node wrapper is 1px wide; frame the value labels to include its icon.
+	await shot('card - Leaf node', leaf.locator('p').first().locator('..'), { pad: 50 });
 };
 
 // ---------------------------------------------------- compact / solution tree

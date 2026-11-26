@@ -16,22 +16,31 @@ test('all captured pages have current merged guides', () => {
 });
 
 test('merged guides and the process index have working local links', async () => {
-	const files = ['README.md', ...guides.map(guide => guide.file ?? `${guide.page}.md`)];
+	const files = ['workflow.md', ...guides.map(guide => guide.file ?? `${guide.page}.md`)];
 	for (const file of files) {
-		const fullPath = path.join(root, 'workflow', file);
+		const fullPath = file === 'workflow.md'
+			? path.join(root, 'workflow', file)
+			: path.join(root, 'workflow', 'pages', file);
 		const content = await readFile(fullPath, 'utf8');
 		const links = new Set();
+		const pageLinks = [];
 		let images = 0;
 		for (const match of content.matchAll(/(!?)\[[^\]]*\]\((?:<([^>]+)>|([^)\s]+))\)/g)) {
 			const target = match[2] ?? match[3];
 			links.add(target);
+			if (target.startsWith('./pages/')) pageLinks.push(target);
 			if (/^(?:https?:|#)/.test(target)) continue;
 			await access(path.resolve(path.dirname(fullPath), target));
 			if (match[1]) images++;
 		}
-		if (file === 'README.md') {
+		if (file === 'workflow.md') {
+			assert.deepEqual(
+				pageLinks.filter(link => guides.some(guide => link === `./pages/${guide.file ?? `${guide.page}.md`}`)),
+				guides.map(guide => `./pages/${guide.file ?? `${guide.page}.md`}`),
+				'Page guide order differs from the process index',
+			);
 			for (const guide of guides) {
-				assert.ok(links.has(`./${guide.file ?? `${guide.page}.md`}`), `Guide missing from process index: ${guide.page}`);
+				assert.ok(links.has(`./pages/${guide.file ?? `${guide.page}.md`}`), `Guide missing from process index: ${guide.page}`);
 			}
 			continue;
 		}

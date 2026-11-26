@@ -2,7 +2,7 @@
 
 # Solution tree
 
-[Previous: Compact tree](./compact_tree.md) | [Workflow](./README.md) | [Next: Assessments](./assessments.md)
+[Previous: Compact tree](./compact_tree.md) | [Workflow](../workflow.md) | [Next: Assessments](./assessments.md)
 
 Choose **Solution** from the **Decision Tree** sidebar popup to inspect the solution representation. Relate the displayed paths to the assumptions and inputs reviewed in the model.
 
@@ -10,12 +10,12 @@ Choose **Solution** from the **Decision Tree** sidebar popup to inspect the solu
 
 Use the solution tree representation to examine the solved policy and the paths it displays. Interpret recommendations in the context of the model's objectives, probabilities, values, and information timing; a recommendation is not a guarantee of the eventual outcome.
 
-![Solution tree page](<./figures/solution_tree/page - Solution tree.png>)
+![Solution tree page](<../figures/solution_tree/page - Solution tree.png>)
 
 ## Inspect a node
 
 Read a node's displayed details in the context of the model's solution.
 
-![Node in the solution tree](<./figures/solution_tree/card - Decision node.png>)
+![Node in the solution tree](<../figures/solution_tree/card - Decision node.png>)
 
-[Previous: Compact tree](./compact_tree.md) | [Workflow](./README.md) | [Next: Assessments](./assessments.md)
+[Previous: Compact tree](./compact_tree.md) | [Workflow](../workflow.md) | [Next: Assessments](./assessments.md)

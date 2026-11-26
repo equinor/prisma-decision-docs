@@ -6,6 +6,7 @@ import { guides } from './guides.mjs';
 import { pages } from './pages.mjs';
 
 const workflow = fileURLToPath(new URL('../workflow/', import.meta.url));
+const output = path.join(workflow, 'pages');
 const check = process.argv.includes('--check');
 const filename = guide => guide.file ?? `${guide.page}.md`;
 const rendered = [];
@@ -23,7 +24,7 @@ for (const [index, guide] of guides.entries()) {
 
 	const navigation = [
 		index > 0 ? `[Previous: ${guides[index - 1].title}](./${filename(guides[index - 1])})` : null,
-		'[Workflow](./README.md)',
+		'[Workflow](../workflow.md)',
 		index < guides.length - 1 ? `[Next: ${guides[index + 1].title}](./${filename(guides[index + 1])})` : null,
 	].filter(Boolean).join(' | ');
 	const parts = [
@@ -39,11 +40,11 @@ for (const [index, guide] of guides.entries()) {
 			parts.push(fragment.trim()
 				.replace(/^## (.+)\n\n/, (_, title) =>
 					section.figures.length === 1 || title === section.title ? '' : `### ${title}\n\n`)
-				.replace(/!\[([^\]]*)\]\(<\.\/([^>]+)>\)/g, `![$1](<./figures/${figureFolder}/$2>)`));
+				.replace(/!\[([^\]]*)\]\(<\.\/([^>]+)>\)/g, `![$1](<../figures/${figureFolder}/$2>)`));
 		}
 	}
 	parts.push(navigation);
-	rendered.push({ file: path.join(workflow, filename(guide)), content: `${parts.join('\n\n')}\n` });
+	rendered.push({ file: path.join(output, filename(guide)), content: `${parts.join('\n\n')}\n` });
 }
 
 for (const { file, content } of rendered) {

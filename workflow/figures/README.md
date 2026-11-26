@@ -45,7 +45,7 @@ See the [tooling guide](../../tools/README.md) for capture and validation comman
 1. **Figure fragments** here describe individual controls, dialogs, and page states.
 2. **Page guides** under `workflow/` select and order those fragments into tasks.
    The merger adjusts headings and rebases image paths to the destination document.
-3. **Process index** at [workflow/README.md](../README.md) links the page guides
+3. **Process index** at [workflow/workflow.md](../workflow.md) links the page guides
    in the decision workflow, allowing the process to be revisited iteratively.
 
 Run `node tools/merge-guides.mjs` from the repository root to rebuild page guides.

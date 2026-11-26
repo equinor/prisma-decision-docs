@@ -2,7 +2,7 @@
 
 # Project information
 
-[Previous: Get started](./get_started.md) | [Workflow](./README.md) | [Next: Objectives](./objectives.md)
+[Previous: Home page](./home_page.md) | [Workflow](../workflow.md) | [Next: Stakeholder matrix](./stakeholder_matrix.md)
 
 Establish a shared decision context before developing the model. Record the opportunity, review the team, and manage the project settings.
 
@@ -12,13 +12,19 @@ Establish a shared decision context before developing the model. Record the oppo
 
 Select **Project Information** in the sidebar to return to the project's context and settings.
 
-![Project Information sidebar entry](<./figures/project_information/button - Project Information.png>)
+![Project Information sidebar entry](<../figures/project_information/button - Project Information.png>)
 
 ### Describe the project
 
 Use project information to define the opportunity, review the team, and manage the project's basic settings.
 
-![Project information page](<./figures/project_information/page - Project information.png>)
+![Project information page](<../figures/project_information/page - Project information.png>)
+
+### Expand the sidebar
+
+The left snapshot shows the collapsed sidebar and the right shows it expanded. Select the chevron at the top to show or hide the navigation labels.
+
+![Collapsed and expanded project sidebar, with an arrow showing the expansion direction](<../figures/project_information/pane - Side bar.png>)
 
 ## Define the decision context
 
@@ -26,19 +32,19 @@ Use project information to define the opportunity, review the team, and manage t
 
 Use **Project Name** to give the decision project a clear, recognizable name. Leave the field to apply the change, then revisit the page to confirm it persisted; other forms may require an explicit **Save** or **Add** action.
 
-![Project Name field](<./figures/project_information/field - Project Name.png>)
+![Project Name field](<../figures/project_information/field - Project Name.png>)
 
 ### State the opportunity
 
 Describe the choice, intended outcome, scope, and important constraints in **Opportunity Statement** so the team has a shared starting point. Explain what is being decided, rather than describing only a preferred solution. Leave the editor to apply the change.
 
-![Opportunity Statement field](<./figures/project_information/field - Opportunity Statement.png>)
+![Opportunity Statement field](<../figures/project_information/field - Opportunity Statement.png>)
 
 ### Set the end date
 
 Open the date control to set or change the project's end date. Choose a meaningful decision or project milestone so the date supports the team's planning.
 
-![Project end date control](<./figures/project_information/field - End date.png>)
+![Project end date control](<../figures/project_information/field - End date.png>)
 
 ## Review the team and visibility
 
@@ -46,13 +52,13 @@ Open the date control to set or change the project's end date. Choose a meaningf
 
 Use **Team members** to review who is involved and their project roles. Where user lookup is available, search for a user, add them, and assign **Member**, **Decision Maker**, or **Facilitator**. Management controls depend on the role: facilitators manage project information, membership, and assessment rounds, so participants may see fewer buttons than these screenshots show.
 
-![Team members panel](<./figures/project_information/card - Team members.png>)
+![Team members panel](<../figures/project_information/card - Team members.png>)
 
 ### Set project visibility
 
 Use **Make Project Public** to change the project's visibility; consider the sensitivity of the decision information before enabling it.
 
-![Make Project Public switch](<./figures/project_information/field - Make Project Public.png>)
+![Make Project Public switch](<../figures/project_information/field - Make Project Public.png>)
 
 ## Back up or reuse the project
 
@@ -60,30 +66,30 @@ Use **Make Project Public** to change the project's visibility; consider the sen
 
 Select **Download** to save the project as JSON for sharing or later import. The current export includes model inputs, objectives, strategies, whiteboard content, and stakeholder-matrix entries, but not assessment submissions. Keep important results, supporting evidence, and decision rationale separately; do not assume the JSON alone is a complete project archive.
 
-![Download project button](<./figures/project_information/button - Download.png>)
+![Download project button](<../figures/project_information/button - Download.png>)
 
 ### Duplicate a project
 
 Select **Duplicate** to open the confirmation dialog for creating a copy of the project.
 
-![Duplicate project button](<./figures/project_information/button - Duplicate.png>)
+![Duplicate project button](<../figures/project_information/button - Duplicate.png>)
 
 ### Confirm project duplication
 
 Check the project named in the dialog, then select **Duplicate** to create a separate project for alternative work or **Cancel** to leave it unchanged. Open and inspect the new copy before using it as a decision record; duplication and JSON import are different operations and should not be assumed to copy identical content.
 
-![Duplicate Project confirmation dialog](<./figures/project_information/window - Duplicate Project.png>)
+![Duplicate Project confirmation dialog](<../figures/project_information/window - Duplicate Project.png>)
 
 ## Delete a project
 
 Select **Delete** to open the project deletion confirmation; review it carefully before proceeding.
 
-![Delete project button](<./figures/project_information/button - Delete.png>)
+![Delete project button](<../figures/project_information/button - Delete.png>)
 
 ### Confirm project deletion
 
 Check the project named in the dialog; select **Cancel** to keep it or **Delete** only if you intend to remove it.
 
-![Delete Project confirmation dialog](<./figures/project_information/window - Delete Project.png>)
+![Delete Project confirmation dialog](<../figures/project_information/window - Delete Project.png>)
 
-[Previous: Get started](./get_started.md) | [Workflow](./README.md) | [Next: Objectives](./objectives.md)
+[Previous: Home page](./home_page.md) | [Workflow](../workflow.md) | [Next: Stakeholder matrix](./stakeholder_matrix.md)

@@ -60,7 +60,7 @@ On the computational part, the decision model is expressed as an [influence diag
 
 ### Workflow
 
-See the [page-by-page workflow guides](./workflow/README.md) for illustrated instructions.
+See the [page-by-page workflow guides](./workflow/workflow.md) for illustrated instructions.
 
 1. Define Decision Context
 1. Define Objectives
