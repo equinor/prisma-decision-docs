@@ -1,6 +1,8 @@
-## Arc reversal in ID to DT conversion
+---
+title: "Arc reversal in ID to DT conversion"
+---
 
-### Theoretical considerations
+## Theoretical considerations
 
 The general rules for converting an influence diagram (ID) to a decision tree (DT) can be found in [^1]. There, among others, 2 definitions are introduced
 - A *decision network* is an influence diagram:
@@ -29,14 +31,7 @@ $$
 
 This can easily be extended to the case of a node with several parents (as long as no cycle is created). We use the case described by Shachter (1990)[^2]
 
-<br>
-
-<p align="center">
-<img src="./figures/arc_reversal_shachter.svg" 
-    alt="Probabilistic influence diagram from Shachter (1990)"
-    title="Probabilistic influence diagram from Shachter (1990)"
-    width="400">
-</p>
+![Probabilistic influence diagram from Shachter (1990)](./figures/arc_reversal_shachter.svg)
 
 *Probabilistic influence diagram from Shachter (1990).*
 
@@ -93,23 +88,11 @@ $$
 
 It is necessary to have it in $H$ as we have $L\rightarrow j \rightarrow i$, meaning $L$ affects $i$ indirectly. 
 
-
-<br>
-
-<p align="center">
-<img src="./figures/arc_reversal_shachter_after.svg" 
-    alt="Probabilistic influence diagram after arc reversal from Shachter (1990)"
-    title="Probabilistic influence diagram after arc reversal from Shachter (1990)"
-    width="400">
-</p>
+![Probabilistic influence diagram after arc reversal from Shachter (1990)](./figures/arc_reversal_shachter_after.svg)
 
 *Probabilistic influence diagram from Shachter (1990) after arc reversal to* $j \rightarrow i$.
 
-
-
 A condition for deciding about the need of reversing arcs is given in[^2]: 
-
-<br/>
 
 > Any regular influence diagram can be transformed to a decision-tree network 
 by this process: While there is a reversible arc from a chance node in one 
@@ -118,22 +101,13 @@ arc.
 
 A decision window contains the chance nodes observed for the first time between two consecutive decisions (see [Partial order](./partial_order.md)).
 
-
-### Example
+## Example
 
 Let's consider the used car buyer problem represented on the Figure below.
 
-<br>
-
-<p align="center">
-<img src="./figures/used_car_buyer.png" 
-    alt="Influence diagram of the used car buyer problem"
-    title="Influence diagram of the used car buyer problem"
-    width="400">
-</p>
+![Influence diagram of the used car buyer problem](./figures/used_car_buyer.png)
 
 *Influence diagram of the used car buyer problem. T is the decision of testing or not, A is the decision of purchasing, R is the result of the test, O is the initial state of the car, and V<sub>1</sub>, V<sub>2</sub>, and V<sub>3</sub> are the cost of the test, the profit of the car and the maintenance costs.*
-
 
 The decisions windows are
 
@@ -252,22 +226,11 @@ and
 |   open    | 0.23     |  0.34  |   0.43   |
 |   diffuse | 0.05     |  0.22  |   0.73   |
 
-
-<br/>
-<br/>
-
 **Remarks:**
 
 In the influence diagram above, there is a path from the state of the car, $O$ to the purchase decision, $A$, while $O$ is *not* observed at the time of $A$. This influence diagram is thus not a decision tree network. If we would have modelled the used car buyer problem with an arc $R \rightarrow O$ (thus deducing the possible state of the car from the test results), it would then be the equivalent decision tree network to the influence diagram shown above.
 
-<br>
-
-<p align="center">
-<img src="./figures/used_car_buyer_reversed.png"
-    alt="Decision tree network of the used car buyer problem"
-    title="Decision tree network of the used car buyer problem"
-    width="400">
-</p>
+![Decision tree network of the used car buyer problem](./figures/used_car_buyer_reversed.png)
 
 *Decision tree network of the used car buyer problem. T is the decision of testing or not, A is the decision of purchasing, R is the result of the test, O is the initial state of the car, and V<sub>1</sub>, V<sub>2</sub>, and V<sub>3</sub> are the cost of the test, the profit of the car and the maintenance costs.*
 
@@ -275,14 +238,12 @@ In that case, we have the same partial order, but $R$ points to the chance node 
 
 It is worth noticing that one of the advantages of influence diagrams (ID) to decision trees (DT) is that probabilities can be entered as observed. For example, we can naturally model the causality or the way conditional probabilities are measured, as for example, observing symptoms given the possible prevalence of a disease. The DT may use the reciprocal conditional probability and the brute-force conversion by computing the joint may be intractable in problems that have many chance variables [^3].
 
-
-### See also
+## See also
 - [Influence diagram](./influence_diagram.md)
 - [Decision tree](./decision_tree.md)
 - [Partial order](./partial_order.md)
 
-
-### References
+## References
 
 [^1]: Howard, Ronald A., and Matheson, James E. (2005) *Influence Diagrams*. Decision Analysis 2(3):127-143.
 https://doi.org/10.1287/deca.1050.0020

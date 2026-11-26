@@ -1,0 +1,15 @@
+---
+/**
+ * Wraps Starlight's ThemeProvider and restores the `StarlightThemeProvider`
+ * global that Starlight removed in 0.43. `starlight-theme-md3` (<= 0.2.3) still
+ * calls `StarlightThemeProvider.updatePickers()` from its theme switcher, and
+ * without this shim that throws and the light/dark menu never gets wired up.
+ * The MD3 picker syncs its own UI, so a no-op implementation is sufficient.
+ */
+import Default from '@astrojs/starlight/components/ThemeProvider.astro';
+---
+
+<Default />
+<script is:inline>
+	window.StarlightThemeProvider ??= { updatePickers() {} };
+</script>

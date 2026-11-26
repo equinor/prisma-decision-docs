@@ -1,0 +1,136 @@
+/* Centre figures and style the italic caption paragraph that follows them.
+   Images are display: block in this theme, so centre with auto margins. */
+.sl-markdown-content p:has(> img:only-child) {
+	text-align: center;
+}
+
+.sl-markdown-content p:has(> img:only-child) > img {
+	margin-inline: auto;
+}
+
+.sl-markdown-content p:has(> img:only-child) + p > em:only-child {
+	display: block;
+	text-align: center;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-2);
+}
+
+/* Keep KaTeX display math scrollable on narrow screens. */
+.sl-markdown-content .katex-display {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+/* Landing page: centred hierarchy-of-decisions figure with caption. */
+.centered-figure {
+	margin: 1.5rem auto;
+	max-width: 36rem;
+	text-align: center;
+}
+
+.centered-figure img {
+	width: 100%;
+	height: auto;
+	/* The triangle's axis is at ~39% of the image width (the labels on the right
+	   make the artwork asymmetric); shift the image so the triangle, not the
+	   canvas, is centred on the page. */
+	position: relative;
+	left: 10.8%;
+}
+
+.centered-figure figcaption {
+	margin-top: 0.5rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-2);
+}
+
+/* Landing page hero: larger title and less empty space before the content. */
+.hero h1 {
+	font-size: clamp(var(--sl-text-4xl), calc(0.5rem + 6vw), 4.5rem);
+}
+
+.hero {
+	padding-bottom: 0;
+}
+
+/* Tighten the gap between the hero actions and the first content block. */
+.hero + .sl-markdown-content {
+	margin-top: 0;
+}
+
+.hero + .sl-markdown-content > :first-child {
+	margin-top: 1.5rem;
+}
+
+@media (min-width: 50rem) {
+	.hero {
+		padding-block: clamp(1.5rem, calc(0.5rem + 4vmin), 3rem) 0;
+		/* Align the title/buttons with the top of the logo instead of centering. */
+		align-items: start;
+	}
+
+	/* The logo PNG has ~20% transparent padding above the triangle and ~26% below.
+	   Cancel it (percent margins are relative to the column width, and the image
+	   is square) so the visible triangle lines up with the title and the logo
+	   does not add empty space below the buttons. */
+	.hero > img {
+		margin-top: -19%;
+		margin-bottom: -25%;
+	}
+}
+
+/* Quote blocks in Prisma blue (matching the logo) instead of the theme accent. */
+:root {
+	--prisma-quote-border: #2c6ea8;
+	--prisma-quote-bg: #e6f2fb;
+}
+
+:root[data-theme='dark'] {
+	--prisma-quote-border: #4ba3dc;
+	--prisma-quote-bg: rgb(75 163 220 / 0.14);
+}
+
+.sl-markdown-content blockquote:not(:where(.not-content *)) {
+	border-inline-start-color: var(--prisma-quote-border);
+	background-color: var(--prisma-quote-bg);
+}
+
+/* Narrower "On this page" column on the right. Starlight sizes it with the left
+   sidebar's --sl-sidebar-width and gives it half of the spare space on wide
+   screens; pin it to a fixed width instead and centre the content in the rest. */
+@media (min-width: 72rem) {
+	:root {
+		--toc-width: 14rem;
+	}
+
+	.right-sidebar-container {
+		width: var(--toc-width);
+	}
+
+	[data-has-sidebar][data-has-toc] .main-pane {
+		--sl-content-margin-inline: auto;
+		width: calc(100% - var(--toc-width));
+	}
+
+	/* The fixed-position panel is sized relative to the viewport by default;
+	   size it to the column instead so the TOC text wraps inside it. */
+	.right-sidebar-container {
+		container-type: inline-size;
+	}
+
+	.right-sidebar {
+		width: 100cqi;
+	}
+
+	.right-sidebar-panel .sl-container {
+		inline-size: 100%;
+	}
+}
+
+/* Figures are transparent PNG/SVGs drawn with black lines and labels, which
+   disappear on the dark background. Give them a light plate in dark mode. */
+:root[data-theme='dark'] .sl-markdown-content img:not(:where(.not-content *)) {
+	background-color: #f4f6f8;
+	padding: 0.75rem;
+	border-radius: var(--md-sys-shape-md, 0.5rem);
+}
