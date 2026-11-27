@@ -154,3 +154,5 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full writing conventions and th
 [^1]: Howard R. A. and Abbas A. E. (2016). Foundations of Decision Analysis. Pearson Education 2016.
 
 [^2]: Bratvold, R. B. and Begg, S. (2010). Making Good Decisions, Society of Petroleum Engineers,  DOI: https://doi.org/10.2118/9781555632588, ISBN electronic: 978-1-61399-948-6.
+
+
