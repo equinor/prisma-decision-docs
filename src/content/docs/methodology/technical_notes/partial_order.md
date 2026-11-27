@@ -1,6 +1,8 @@
-## Partial order
+---
+title: "Partial order"
+---
 
-### Definition
+## Definition
 
 A strong connection between partial orderings and directed (acyclic) graphs exists[^1] and ordering elements of an [influence diagram](./influence_diagram.md) may be an important step in the analysis. 
 
@@ -14,7 +16,7 @@ A *binary relation* on a finite set of elements $N$ compares pairs of elements f
 
 The relation $\preceq$ is a partial ordering if it is reflexive, transitive, and antisymmetric. A partial ordering is a total ordering if it is also complete. 
 
-### Algorithm
+## Algorithm
 
 Given the $m$ decision nodes $d_1, d_2, \ldots d_m$ in the influence diagram and assuming they are completely ordered (regularity constraint of the influence diagram), we have $m+1$ *decision windows*. A decision
 window, $W_j$ contains the chance nodes observed for the first time between the decision $d_{j-1}$ and $d_{j}$.
@@ -39,22 +41,11 @@ This leads to the algorithm (notice the elimination order is the reversed versio
 > 1. **Return** $\preceq$
 > ---
 
-<br>
-
 The figure below represents the influence diagram for the used car buyer problem.
 
-<br>
-<br>
-
-<p align="center">
-<img src="./figures/used_car_buyer.png" 
-    alt="Influence diagram of the used car buyer problem"
-    title="Influence diagram of the used car buyer problem"
-    width="400">
-</p>
+![Influence diagram of the used car buyer problem](./figures/used_car_buyer.png)
 
 *Influence diagram of the used car buyer problem. T is the decision of testing or not, A is the decision of purchasing, R is the result of the test, O is the initial state of the car, and V<sub>1</sub>, V<sub>2</sub>, and V<sub>3</sub> are the cost of the test, the profit of the car and the maintenance costs.*
-
 
 The decisions windows are
 
@@ -68,15 +59,13 @@ $$
 T \preceq R \preceq A \preceq O
 $$  
 
-
-### See also
+## See also
 - [Influence diagram](./influence_diagram.md)
 - Topological order
 - [Decision tree](./decision_tree.md)
 - Junction tree
 
-
-### References
+## References
 
 [^1]: Shachter, Ross. (1990). An Ordered Examination of Influence Diagrams. Networks. 20. 535 - 563. 10.1002/net.3230200505.
 [@ResearchGate](https://www.researchgate.net/publication/227656993_An_Ordered_Examination_of_Influence_Diagrams)

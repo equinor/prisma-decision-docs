@@ -12,12 +12,13 @@ Whether it's fixing a typo, improving explanations, proposing new documentation,
 
 ## Getting Started
 
-This repository contains the domain documentation and design decisions for the Prisma Decision project. It is a Markdown-based documentation repository — no build tools or programming languages are required.
+This repository contains the domain documentation and design decisions for the Prisma Decision project. The content is written in Markdown and published as a static site with [Starlight](https://starlight.astro.build/) (an [Astro](https://astro.build/) documentation framework) at https://equinor.github.io/prisma-decision-docs/.
 
 ### Prerequisites
 
 - A text editor with Markdown support
 - [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) 22.23 or later (see [`.nvmrc`](.nvmrc)) — only needed to preview or build the site
 - Familiarity with the Prisma Decision domain (see [README.md](README.md))
 
 ### Local Setup
@@ -25,9 +26,28 @@ This repository contains the domain documentation and design decisions for the P
 ```bash
 git clone https://github.com/equinor/prisma-decision-docs.git
 cd prisma-decision-docs
+npm ci
+npm run dev
 ```
 
-You can preview Markdown files using your editor's built-in preview (e.g., VS Code) or any Markdown viewer of your choice.
+The dev server runs at http://localhost:4321/prisma-decision-docs/ and reloads when you edit a file. For small edits you can also just preview Markdown files in your editor (e.g., VS Code).
+
+Before opening a pull request, make sure `npm run build` completes without errors. The same command runs in CI for every pull request.
+
+### Repository Layout
+
+| Path | Purpose |
+| --- | --- |
+| `src/content/docs/` | All documentation pages (Markdown/MDX). Each file becomes a page, except `README.md` files and files starting with `_`. |
+| `src/content/docs/methodology/` | Methodology section: `da_dq/` (DA/DQ introduction) and `technical_notes/` |
+| `src/content/docs/methodology/technical_notes/figures/` | Figures used by the technical notes |
+| `src/content/docs/workflow/` | Workflow: how to use prisma-decision step by step |
+| `src/content/docs/troubleshooting/` | Troubleshooting: known issues and workarounds |
+| `src/content/docs/index.mdx` | Landing page of the site |
+| `src/plugins/` | Markdown plugins (KaTeX math rendering, `.md` link rewriting) |
+| `src/styles/custom.css` | Custom styles applied on top of Starlight and the Material Design 3 theme |
+| `astro.config.mjs` | Site configuration (title, sections/sidebars, theme options, GitHub Pages `base`, etc.) |
+| `.github/workflows/deploy.yml` | Builds the site and deploys it to GitHub Pages |
 
 ## How to Suggest Changes
 
@@ -48,7 +68,58 @@ When opening an issue, include:
 - Write for an audience familiar with decision analysis concepts.
 - Use headings, lists, and tables to structure content for readability.
 - Include references where appropriate, using Markdown footnotes.
-- Keep figures and images in the relevant subdirectory (e.g., `domain/figures/`).
+- Keep figures and images in the relevant subdirectory (e.g., `src/content/docs/methodology/technical_notes/figures/`).
+
+### Page Format
+
+Every page starts with a frontmatter block declaring at least a `title`. The title is rendered as the top-level heading, so sections in the body start at level 2 (`##`):
+
+```md
+---
+title: Influence diagrams
+description: Optional short summary used for SEO and link previews.
+---
+
+Introductory paragraph.
+
+## First section
+```
+
+Each section (Methodology, Workflow, Troubleshooting) has its own sidebar, generated from the files in the matching sub-folder of `src/content/docs/` and ordered alphabetically by title; the sections are configured with `starlightSidebarTopics` in `astro.config.mjs`. Add `sidebar: { order: N }` to the frontmatter to override the position.
+
+### Links
+
+Link to other pages with relative paths to their Markdown files, e.g. `[Influence diagram](./influence_diagram.md)`. These links work on GitHub and are rewritten to the correct site URLs at build time.
+
+### Figures
+
+Use standard Markdown image syntax with a relative path, optionally followed by an italic caption paragraph. Images are optimized automatically at build time.
+
+```md
+![Influence diagram of the used car buyer problem](./figures/used_car_buyer.png)
+
+*Influence diagram of the used car buyer problem.*
+```
+
+### Math
+
+LaTeX math is rendered with [KaTeX](https://katex.org/): use `$...$` for inline math and `$$ ... $$` on their own lines for display math.
+
+### Callouts
+
+Use [Starlight asides](https://starlight.astro.build/guides/authoring-content/#asides) for notes and warnings:
+
+```md
+:::note
+Useful information.
+:::
+
+:::caution[Optional custom title]
+Something to be careful about.
+:::
+```
+
+Supported types are `note`, `tip`, `caution` and `danger`.
 
 ## Commits
 

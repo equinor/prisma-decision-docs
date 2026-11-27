@@ -1,5 +1,6 @@
-## Decision analysis
-
+---
+title: "Decision analysis"
+---
 
 Decision analysis is a term that describes a combination of philosophy, methodology, practice, and application useful in the formal introduction of logic and preferences to the decisions of the world. Making a decision is allocating irreversibly resources, that is following a course of action. The [decision maker](./decision_roles.md) is supposed to do so in a world which is uncertain, complex, and dynamic[^1].
 
@@ -11,19 +12,11 @@ Decision analysis (DA) can be split in 3 steps[^2]
 
 It is an iterative process, where these 3 steps should be revisited until the best [decision quality](./decision_quality.md) is reached.
 
-<br>
-<p align="center">
-<img src="./figures/da_iterations.png" 
-    alt="Decision analysis process"
-    title="Decision analysis process"
-    width="600">
-</p>
-<br>
-<p align="center">
-<em>The decision analysis iterative process.</em>
-</p>
+![Decision analysis process](./figures/da_iterations.png)
 
-### Formulation phase
+*The decision analysis iterative process.*
+
+## Formulation phase
 
 This phase answers the question "what is the decision you face?". There, the problem is defined and framed. A decision model composed of five elements is build. These elements can be identiﬁed in virtually all decision situations[^2]:
 - Alternatives (or choices) to be decided among 
@@ -37,23 +30,13 @@ The three first elements are also called decision basis:
 - Alternatives: What can you do?
 - Information: What do you knw?
 
-<br>
-<p align="center">
-<img src="./figures/decision_model.png" 
-    alt="Decision model"
-    title="Decision model"
-    width="400">
-</p>
-<br>
-<p align="center">
-<em>The 5 elements of a decision model.</em>
-</p>
+![Decision model](./figures/decision_model.png)
 
+*The 5 elements of a decision model.*
 
 Typically, the formulation phase would produce an [influence diagram](./influence_diagram.md) and/or a [decision tree](./decision_tree.md). In prisma-decision, an influence diagrams ios built. The corresponding decision tree is computed from the influence diagram.
 
-
-### Evaluation phase
+## Evaluation phase
 
 This phase models the connection between the decision alternatives and the corresponding values. It can consist of
 
@@ -68,14 +51,11 @@ This phase models the connection between the decision alternatives and the corre
   
 Within this phase tornado plots for the sensitivity analysis could be produced, probability functions can be elicited, risk attitude considered, the optimum strategy can be found.
 
+:::caution
+This phase is only partially implemented in prisma-decision
+:::
 
-> [!WARNING]
-> This phase is only partially implemented in prisma-decision
-
-
-
-
-### Appraisal phase
+## Appraisal phase
 
 The appraisal phase evaluates how robust the decision is to changes in the inputs. It includes for example
 - Sensitivity analysis
@@ -85,16 +65,15 @@ The appraisal phase evaluates how robust the decision is to changes in the input
 - Value of flexibility
 - Decision quality assessment
 
-> [!WARNING]
-> This phase is not yet implemented in prisma-decision 
+:::caution
+This phase is not yet implemented in prisma-decision 
+:::
 
-
-### See also
+## See also
 - [Decision quality](./decision_quality.md)
 - [Decision roles](./decision_roles.md)
 
-
-### References
+## References
 
 [^1]: Howard, R. A. (1968). The foundation of Decision Analysis, IEEE Transactions on Systems Sciences and Cybernetics, Vol. SSC-4, No. 3.
 
