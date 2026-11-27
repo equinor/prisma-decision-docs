@@ -4,7 +4,7 @@
 
 [Previous: Whiteboard](./whiteboard.md) | [Workflow](../workflow.md) | [Next: Decision tree](./decision_tree.md)
 
-Structure the decision model using decisions, uncertainties, utilities, and their relationships. Inspect model inputs before interpreting calculated results. See [Influence diagrams](../../domain/influence_diagram.md) for arrow meanings, information timing, and input checks.
+Structure the decision model using decisions, uncertainties, utilities, and their relationships. In Prisma, the influence diagram is a [LIMID](../../domain/limid.md), solved with the Single Policy Update method using [pyAgrum](../../domain/pyagrum.md). See [how to set arcs](../../domain/influence_diagram.md#building-a-diagram-deciding-where-the-arcs-go) for guidance on relationships, information timing, and input checks. Inspect model inputs before interpreting calculated results.
 
 ## Overview and navigation
 
@@ -76,7 +76,7 @@ Hover over an arc to reveal its action control. For an arc into a decision or un
 
 ### Add, change, or remove restrictions
 
-In the restriction table, rows are source states and columns are target states. A switch on means the combination is allowed; switch it off to restrict that target state for the source state. To change a restriction, adjust the relevant switches; to remove one, switch the combination back on. Changes save as you toggle. A restricted arc is dashed. Restrictions exclude combinations; they are not probability estimates. Review the probability table after changes, and use any warning tooltip to understand why a switch is unavailable or a restriction is invalid.
+In the restriction table, rows are source states and columns are target states. A switch on means the combination is allowed; switch it off to restrict that target state for the source state. To change a restriction, adjust the relevant switches; to remove one, switch the combination back on. Changes save as you toggle. A restricted arc is dashed. An excluded combination is impossible in that context, not merely unlikely or undesirable; this is the restriction-table idea used in [decision analysis networks](../../domain/asymmetry.md). Review the probability table after changes, and use any warning tooltip to understand why a switch is unavailable or a restriction is invalid.
 
 ![Arc restriction table](<../figures/influence_diagram/window - Restriction Table.png>)
 

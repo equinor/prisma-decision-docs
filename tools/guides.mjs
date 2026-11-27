@@ -129,7 +129,7 @@ export const guides = [
 	{
 		page: 'influence_diagram',
 		title: 'Influence diagram',
-		intro: 'Structure the decision model using decisions, uncertainties, utilities, and their relationships. Inspect model inputs before interpreting calculated results. See [Influence diagrams](../../domain/influence_diagram.md) for arrow meanings, information timing, and input checks.',
+		intro: 'Structure the decision model using decisions, uncertainties, utilities, and their relationships. In Prisma, the influence diagram is a [LIMID](../../domain/limid.md), solved with the Single Policy Update method using [pyAgrum](../../domain/pyagrum.md). See [how to set arcs](../../domain/influence_diagram.md#building-a-diagram-deciding-where-the-arcs-go) for guidance on relationships, information timing, and input checks. Inspect model inputs before interpreting calculated results.',
 		sections: [
 			{ title: 'Overview and navigation', figures: ['button - Influence Diagram', 'page - Influence diagram'] },
 			{ title: 'Choose how to work with the diagram', figures: [

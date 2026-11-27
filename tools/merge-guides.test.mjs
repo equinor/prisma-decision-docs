@@ -30,7 +30,7 @@ test('merged guides and the process index have working local links', async () =>
 			links.add(target);
 			if (target.startsWith('./pages/')) pageLinks.push(target);
 			if (/^(?:https?:|#)/.test(target)) continue;
-			await access(path.resolve(path.dirname(fullPath), target));
+			await access(path.resolve(path.dirname(fullPath), target.split('#')[0]));
 			if (match[1]) images++;
 		}
 		if (file === 'workflow.md') {
