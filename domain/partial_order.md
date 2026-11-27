@@ -71,6 +71,7 @@ $$
 
 ## See also
 - [Influence diagram](./influence_diagram.md)
+- [Asymmetry in decision problems](./asymmetry.md)
 - Topological order
 - [Decision tree](./decision_tree.md)
 - Junction tree

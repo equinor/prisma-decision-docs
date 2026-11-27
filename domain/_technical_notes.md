@@ -5,6 +5,8 @@
 [Arc reversal when converting an ID to DT](./id_to_dt_arc_reversal.md
 )
 
+[Asymmetry in decision problems](./asymmetry.md)
+
 ## B
 
 ## C
@@ -28,6 +30,8 @@
 ## I
 
 [Influence diagram](./influence_diagram.md)
+
+[Influence diagram assumptions](./influence_diagram_assumptions.md)
 
 ## J
 
@@ -57,6 +61,8 @@
 ## T
 
 ## U
+
+[Utility separability](./utility_separability.md)
 
 ## V
 
